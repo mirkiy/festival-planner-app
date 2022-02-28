@@ -30,7 +30,7 @@ public class FestivalController {
         // second parameter is how we want the data (so no String lol)
         RestTemplate restTemplate = new RestTemplate();
         Object response = restTemplate.getForObject(url, Object[].class);
+
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
 }
