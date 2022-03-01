@@ -24,7 +24,6 @@ public class Festival {
     public Festival() {
     }
 
-
     public String getName() {
         return name;
     }
