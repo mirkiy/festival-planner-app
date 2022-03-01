@@ -1,6 +1,9 @@
 package com.codeclan.festivalplannerapp.controllers;
 
 import com.codeclan.festivalplannerapp.helpers.HmacSha1Signature;
+import com.codeclan.festivalplannerapp.models.Festival;
+import com.codeclan.festivalplannerapp.repositories.FestivalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +13,9 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class FestivalController {
+    @Autowired
+    FestivalRepository festivalRepository;
+
     @Value("${keys.SECRET_KEY}")
     private String secretKey;
 
@@ -29,8 +35,25 @@ public class FestivalController {
         // we pass the url signed up with the algorithm
         // second parameter is how we want the data (so no String lol)
         RestTemplate restTemplate = new RestTemplate();
-        Object response = restTemplate.getForObject(url, Object[].class);
+        Object[] response = restTemplate.getForObject(url, Object[].class);
 
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        // Map response to Java object
+        // now we create a Festival object. takes two parameters:
+        // 1. Name of festival (fringe, jazz, book, etc), works as unique id
+        // 2. The whole response we get from festival API as an object
+        Festival newFestival = new Festival("jazz", response);
+
+        // we save it
+        festivalRepository.save(newFestival);
+
+        // now we retrieve back
+        // in the future, before running the code above it will check if
+        // that festival exists or not (by festival name property, which works as the ID)
+        // the .orElse(null) is because findById returns Optional, so need to handle in case returns nothing
+        Festival foundFestival = festivalRepository.findById("jazz").orElse(null);
+        Object json = foundFestival.getJsonEventObject(); // FIX THIS
+
+        // we send it to the frontend
+        return new ResponseEntity<>(json, HttpStatus.OK);
     }
 }
