@@ -44,6 +44,9 @@ public class FestivalController {
         Festival newFestival = new Festival("jazz", response);
 
         // we save it
+        // POTENTIALLY WE WOULD BE ONLY CREATING OBJECT AND SAVING
+        // IF THE FESTIVAL IS NOT ALREADY ON DATABASE
+        // BUT THIS IS LIKE A DEMO SO NEVERMIND THAT NOW
         festivalRepository.save(newFestival);
 
         // now we retrieve back
