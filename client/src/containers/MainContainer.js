@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBarContainer from './NavBarContainer'
-import RouteContainer from './RouteContainer'
+import RouterContainer from './RouterContainer'
 import SocialMediaContainer from './SocialMediaContainer'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -11,7 +11,7 @@ const MainContainer = () => {
         <NavBarContainer/>
         <SocialMediaContainer/>
         <BrowserRouter>
-            <RouteContainer/>
+            <RouterContainer/>
         </BrowserRouter>
     </>
   )
