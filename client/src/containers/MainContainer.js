@@ -2,14 +2,17 @@ import React from 'react'
 import NavBarContainer from './NavBarContainer'
 import RouteContainer from './RouteContainer'
 import SocialMediaContainer from './SocialMediaContainer'
+import { BrowserRouter } from 'react-router-dom'
 
 const MainContainer = () => {
   return (
     <>
         <div>MainContainer</div>
         <NavBarContainer/>
-        <RouteContainer/>
         <SocialMediaContainer/>
+        <BrowserRouter>
+            <RouteContainer/>
+        </BrowserRouter>
     </>
   )
 }
