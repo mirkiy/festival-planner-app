@@ -27,23 +27,71 @@ const NavBarContainer = () => {
                         />
                     </NavIcon>
                     <NavText>
-                        <Link to="/about">About</Link>
+                        <Link to="/">Home</Link>
                     </NavText>
                 </NavItem>
-                <NavItem eventKey="charts">
+                <NavItem eventKey="festivals">
                     <NavIcon>
                         <i
                             className="fa fa-fw fa-line-chart"
                             style={{ fontSize: "1.75em" }}
                         />
                     </NavIcon>
-                    <NavText>Charts</NavText>
-                    <NavItem eventKey="charts/linechart">
-                        <NavText>Line Chart</NavText>
+                    <NavText>Festivals</NavText>
+                    <NavItem eventKey="festivals/jazz">
+                        <NavText>
+                            <Link to="/festivals">Jazz</Link>
+                        </NavText>
                     </NavItem>
-                    <NavItem eventKey="charts/barchart">
-                        <NavText>Bar Chart</NavText>
+                    <NavItem eventKey="festivals/book">
+                        <NavText>
+                            <Link to="/festivals">Book</Link>
+                        </NavText>
                     </NavItem>
+                </NavItem>
+                <NavItem eventKey="favourites">
+                    <NavIcon>
+                        <i
+                            className="fa fa-fw fa-home"
+                            style={{ fontSize: "1.75em" }}
+                        />
+                    </NavIcon>
+                    <NavText>
+                        <Link to="/favourites">Favourites</Link>
+                    </NavText>
+                </NavItem>
+                <NavItem eventKey="calendar">
+                    <NavIcon>
+                        <i
+                            className="fa fa-fw fa-home"
+                            style={{ fontSize: "1.75em" }}
+                        />
+                    </NavIcon>
+                    <NavText>
+                        <Link to="/calendar">Calendar</Link>
+                    </NavText>
+                </NavItem>
+                <NavItem eventKey="login">
+                    <NavIcon>
+                        <i
+                            className="fa fa-fw fa-home"
+                            style={{ fontSize: "1.75em" }}
+                        />
+                    </NavIcon>
+                    <NavText>
+                        <Link to="/form">Login</Link>
+                    </NavText>
+                </NavItem>
+                <NavItem eventKey="about">
+                    <NavIcon>
+                        <i
+                            className="fa fa-fw fa-home"
+                            style={{ fontSize: "1.75em" }}
+                        />
+                    </NavIcon>
+                    <NavText>
+                        <Link to="/about">About</Link>
+                    </NavText>
                 </NavItem>
             </SideNav.Nav>
         </SideNav>
