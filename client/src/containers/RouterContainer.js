@@ -10,14 +10,16 @@ import HomePage from "../pages/HomePage";
 const RouterContainer = () => {
     return (
         <>
-            <Routes>
-                <Route exact path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/calendar" element={<CalendarPage />} />
-                <Route path="/favourites" element={<FavouritesPage />} />
-                <Route path="/festivals" element={<FestivalPage />} />
-                <Route path="/form" element={<FormPage />} />
-            </Routes>
+            <main>
+                <Routes>
+                    <Route exact path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/calendar" element={<CalendarPage />} />
+                    <Route path="/favourites" element={<FavouritesPage />} />
+                    <Route path="/festivals" element={<FestivalPage />} />
+                    <Route path="/form" element={<FormPage />} />
+                </Routes>
+            </main>
         </>
     );
 };
