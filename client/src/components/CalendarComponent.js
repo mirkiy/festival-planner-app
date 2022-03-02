@@ -21,15 +21,13 @@ const CalendarComponent = () => {
     }
     )
 
-    console.log(myEvents);
-
     return (
         <Calendar
             localizer={localizer}
             events={myEvents}
             startAccessor="start"
             endAccessor="end"
-            style={{ height: 500 }}
+            style={{ height: '80vh', width: '100vh' }}
         />
     )
 }
