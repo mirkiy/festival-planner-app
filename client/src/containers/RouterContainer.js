@@ -6,6 +6,7 @@ import FavouritesPage from "../pages/FavouritesPage";
 import FestivalPage from "../pages/FestivalPage";
 import FormPage from "../pages/FormPage";
 import HomePage from "../pages/HomePage";
+import FestivalDataContext from "../context/FestivalDataContext";
 
 const RouterContainer = () => {
   const [festivalData, setFestivalData] = useState();
@@ -29,7 +30,13 @@ const RouterContainer = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="/festivals" element={<FestivalPage />} />
+            <Route path="/festivals" element=
+              {
+              <FestivalDataContext.Provider value = {{festivalData}}>
+                <FestivalPage/>
+              </FestivalDataContext.Provider>
+              }
+            />
           <Route path="/form" element={<FormPage />} />
         </Routes>
       </main>
