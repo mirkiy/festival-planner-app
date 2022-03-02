@@ -28,10 +28,14 @@ const RouterContainer = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/calendar" element={
+            <FestivalDataContext.Provider value = {{festivalData}}>
+              <CalendarPage />
+            </FestivalDataContext.Provider>
+            } 
+          />
           <Route path="/favourites" element={<FavouritesPage />} />
-            <Route path="/festivals" element=
-              {
+            <Route path="/festivals" element={
               <FestivalDataContext.Provider value = {{festivalData}}>
                 <FestivalPage/>
               </FestivalDataContext.Provider>
