@@ -9,7 +9,7 @@ import HomePage from "../pages/HomePage";
 import FestivalDataContext from "../context/FestivalDataContext";
 
 const RouterContainer = () => {
-  const [festivalData, setFestivalData] = useState();
+  const [festivalData, setFestivalData] = useState([]);
 
   const fetchData = () => {
     fetch("http://localhost:8080/festivals")
@@ -28,15 +28,19 @@ const RouterContainer = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/calendar" element={
+            <FestivalDataContext.Provider value={{ festivalData }}>
+              <CalendarPage />
+            </FestivalDataContext.Provider>
+          }
+          />
           <Route path="/favourites" element={<FavouritesPage />} />
-            <Route path="/festivals" element=
-              {
-              <FestivalDataContext.Provider value = {{festivalData}}>
-                <FestivalPage/>
-              </FestivalDataContext.Provider>
-              }
-            />
+          <Route path="/festivals" element={
+            <FestivalDataContext.Provider value={{ festivalData }}>
+              <FestivalPage />
+            </FestivalDataContext.Provider>
+          }
+          />
           <Route path="/form" element={<FormPage />} />
         </Routes>
       </main>
