@@ -1,21 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import EventItem from './EventItem'
 import FestivalDataContext from '../context/FestivalDataContext'
 
 const EventList = () => {
-  return (
-    <ul>
-        <FestivalDataContext.Consumer>
-            {({festivalData}) => {
-                return(
-                    festivalData.map((event, index) => {
-                        return <EventItem key={index} event={event} />
-                    })
-                )
-                }}
-        </FestivalDataContext.Consumer>
-    </ul>
-  )
+
+    let { festivalData } = useContext(FestivalDataContext)
+
+    const eventListNodes = festivalData.map((event, index) => {
+        return <EventItem key={index} event={event} />
+    })
+
+    return (
+        <ul>
+            {eventListNodes}
+        </ul>
+    )
 }
 
 export default EventList
