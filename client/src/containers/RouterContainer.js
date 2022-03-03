@@ -13,6 +13,7 @@ const RouterContainer = () => {
   const [festivalData, setFestivalData] = useState([]);
   const [favouritesData, setFavouritesData] = useState([]);
 
+
   const fetchData = () => {
     fetch("http://localhost:8080/festivals")
       .then((response) => response.json())
@@ -21,8 +22,9 @@ const RouterContainer = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData()
   }, []);
+
 
   const onEventClick = (newFavourite) => {
     if (favouritesData.includes(newFavourite)) {
@@ -34,10 +36,11 @@ const RouterContainer = () => {
 
   return (
     <>
-      <main>
+      <main style={{ paddingBottom: "8vh", paddingLeft: "6vw" }}>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+
           <Route path="/calendar" element={
             <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
               <CalendarPage />
@@ -59,6 +62,7 @@ const RouterContainer = () => {
               </FavouritesDataContext.Provider>
             </FestivalDataContext.Provider>
           }
+
           />
           <Route path="/form" element={<FormPage />} />
         </Routes>

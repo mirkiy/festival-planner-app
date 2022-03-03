@@ -10,4 +10,4 @@ const EventList = ({ context, onEventClick }) => {
     return <section className="event-gallery">{eventListNodes}</section>;
 };
 
-export default EventList;
+export default EventList

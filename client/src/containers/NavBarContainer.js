@@ -6,7 +6,7 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 const NavBarContainer = () => {
   return (
     <SideNav
-      style={{ position: "initial" }}
+      style={{ position: "fixed" }}
       onSelect={(selected) => {
         // Add your code here
       }}

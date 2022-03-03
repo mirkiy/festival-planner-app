@@ -3,9 +3,10 @@ import React from "react";
 const SocialMediaIcon = ({ icon }) => {
   return (
     <div
+      className="rounded"
       style={{
-        width: "50px",
-        height: "50px",
+        width: "36px",
+        height: "36px",
         backgroundColor: "white",
       }}
     >
@@ -26,7 +27,7 @@ const SocialMediaIcon = ({ icon }) => {
           className={icon.icon}
           alt={icon.alt}
           style={{
-            fontSize: "30px",
+            fontSize: "24px",
           }}
         />
       </a>
