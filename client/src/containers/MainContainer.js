@@ -5,15 +5,15 @@ import SocialMediaContainer from "./SocialMediaContainer";
 import { BrowserRouter } from "react-router-dom";
 
 const MainContainer = () => {
-    return (
-        <div style={{ display: "flex", minHeight: "100vh" }}>
-            <BrowserRouter>
-                <NavBarContainer />
-                <SocialMediaContainer />
-                <RouterContainer />
-            </BrowserRouter>
-        </div>
-    );
+  return (
+    <div style={{ display: "flex", minHeight: "100vh" }}>
+      <BrowserRouter>
+        <NavBarContainer />
+        <RouterContainer />
+        <SocialMediaContainer />
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default MainContainer;

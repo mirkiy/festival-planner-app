@@ -2,6 +2,7 @@ import React from "react";
 
 const EventItem = ({ event }) => {
   return (
+
     <div className="event-wrapper">
       {/* <img
         src="https://images.api.edinburghfestivalcity.com/18/45/80/184580a0463f6b993a6216672742f20fa1874e61-square-150.jpg"
