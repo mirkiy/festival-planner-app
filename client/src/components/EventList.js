@@ -1,15 +1,13 @@
 import React, { useContext } from "react";
 import EventItem from "./EventItem";
-import FestivalDataContext from "../context/FestivalDataContext";
 
-const EventList = () => {
-  let { festivalData } = useContext(FestivalDataContext);
+const EventList = ({ context, onEventClick }) => {
 
-  const eventListNodes = festivalData.map((event, index) => {
-    return <EventItem key={index} event={event} />;
-  });
+    const eventListNodes = context.map((event, index) => {
+        return <EventItem key={index} event={event} onEventClick={onEventClick} />;
+    });
 
-  return <section className="event-gallery">{eventListNodes}</section>;
+    return <section className="event-gallery">{eventListNodes}</section>;
 };
 
 export default EventList;

@@ -7,9 +7,11 @@ import FestivalPage from "../pages/FestivalPage";
 import FormPage from "../pages/FormPage";
 import HomePage from "../pages/HomePage";
 import FestivalDataContext from "../context/FestivalDataContext";
+import FavouritesDataContext from "../context/FavouritesDataContext";
 
 const RouterContainer = () => {
   const [festivalData, setFestivalData] = useState([]);
+  const [favouritesData, setFavouritesData] = useState([]);
 
   const fetchData = () => {
     fetch("http://localhost:8080/festivals")
@@ -22,8 +24,6 @@ const RouterContainer = () => {
     fetchData();
   }, []);
 
-  console.log(festivalData)
-
   return (
     <>
       <main>
@@ -31,15 +31,24 @@ const RouterContainer = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/calendar" element={
-            <FestivalDataContext.Provider value={{ festivalData }}>
+            <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
               <CalendarPage />
             </FestivalDataContext.Provider>
           }
           />
-          <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="/favourites" element={
+            <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
+              <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
+                <FavouritesPage />
+              </FavouritesDataContext.Provider>
+            </FestivalDataContext.Provider>
+          }
+          />
           <Route path="/festivals" element={
-            <FestivalDataContext.Provider value={{ festivalData }}>
-              <FestivalPage />
+            <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
+              <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
+                <FestivalPage />
+              </FavouritesDataContext.Provider>
             </FestivalDataContext.Provider>
           }
           />
