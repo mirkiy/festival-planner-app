@@ -4,6 +4,7 @@ import getImageFromEvent from "../helpers/getImageFromEvent";
 
 const EventItem = ({ event }) => {
 
+  // Toggle's render of pop-up modal window
   const [isHidden, setIsHidden] = useState(true)
 
   const image = getImageFromEvent(event, "small-320");
@@ -19,7 +20,7 @@ const EventItem = ({ event }) => {
           {/* <h2>{event.year}</h2> */}
         </div>
       </div>
-      { !isHidden? <EventItemPopUp/> : null }
+      {/* { !isHidden? <EventItemPopUp/> : null } */}
     </>
   );
 };
