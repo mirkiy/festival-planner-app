@@ -33,11 +33,12 @@ const SocialMediaContainer = () => {
 
   return (
     <Container
+      className="rounded"
       style={{
         backgroundColor: "grey",
         width: "max-content",
         height: "max-content",
-        padding: "12px 24px",
+        padding: "6px 14px",
         position: "fixed",
         zIndex: "10000",
         float: "5 right",

@@ -1,20 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
+import EventItemPopUp from "./EventItemPopUp";
+import getImageFromEvent from "../helpers/getImageFromEvent";
 
 const EventItem = ({ event }) => {
+
+  const [isHidden, setIsHidden] = useState(true)
+
+  const image = getImageFromEvent(event, "small-320");
+
   return (
+    <>
+      <div className="event-wrapper" onClick={() => setIsHidden(!isHidden)} >
 
-    <div className="event-wrapper">
-      {/* <img
-        src="https://images.api.edinburghfestivalcity.com/18/45/80/184580a0463f6b993a6216672742f20fa1874e61-square-150.jpg"
-        alt="jazz band"
-      /> */}
-      <img src="https://images.api.edinburghfestivalcity.com/18/45/80/184580a0463f6b993a6216672742f20fa1874e61-small-320.jpg" />
+        <img width="320px" height="180px" src={image.url} />
 
-      <div className="event-wrapper-title-container">
-        <span className="event-wrapper-title">{event.title}</span>
-        {/* <h2>{event.year}</h2> */}
+        <div className="event-wrapper-title-container">
+          <span className="event-wrapper-title">{event.title}</span>
+          {/* <h2>{event.year}</h2> */}
+        </div>
       </div>
-    </div>
+      { !isHidden? <EventItemPopUp/> : null }
+    </>
   );
 };
 
