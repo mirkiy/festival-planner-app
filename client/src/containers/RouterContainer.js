@@ -36,7 +36,7 @@ const RouterContainer = () => {
 
   return (
     <>
-      <main style={{ paddingBottom: "8vh", paddingLeft: "6vw" }}>
+      <main style={{ paddingBottom: "8vh", paddingLeft: "8vw" }}>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
