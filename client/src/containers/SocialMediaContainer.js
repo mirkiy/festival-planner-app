@@ -44,10 +44,9 @@ const SocialMediaContainer = () => {
         left: "50%",
         bottom: "0",
         transform: " translate(-50%, -20%)",
-        opacity: "95%",
       }}
     >
-      <Stack direction="horizontal" gap={3}>
+      <Stack id="social-media-wrapper" direction="horizontal" gap={3}>
         {iconNodes}
       </Stack>
     </Container>
