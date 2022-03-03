@@ -22,6 +22,8 @@ const RouterContainer = () => {
     fetchData();
   }, []);
 
+  console.log(festivalData)
+
   return (
     <>
       <main>
