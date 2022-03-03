@@ -42,9 +42,9 @@ const RouterContainer = () => {
           <Route path="/about" element={<AboutPage />} />
 
           <Route path="/calendar" element={
-            <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
+            <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
               <CalendarPage />
-            </FestivalDataContext.Provider>
+            </FavouritesDataContext.Provider>
           }
           />
           <Route path="/favourites" element={
