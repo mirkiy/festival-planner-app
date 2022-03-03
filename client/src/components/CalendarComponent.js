@@ -42,7 +42,7 @@ const CalendarComponent = () => {
                     startAccessor="start"
                     endAccessor="end"
                     defaultDate={date}
-                    style={{ height: '80vh', width: '100vh' }}
+                    style={{ height: '85vh', width: '100vh' }}
                 /> :
                 <div>
                     <h1>Loading Calendar</h1>
