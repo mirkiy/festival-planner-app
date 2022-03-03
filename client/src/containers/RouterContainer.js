@@ -24,6 +24,14 @@ const RouterContainer = () => {
     fetchData();
   }, []);
 
+  const onEventClick = (newFavourite) => {
+    if (favouritesData.includes(newFavourite)) {
+      setFavouritesData(favouritesData => favouritesData.filter(favourite => favourite !== newFavourite))
+    } else {
+      setFavouritesData(favouritesData => [...favouritesData, newFavourite])
+    }
+  }
+
   return (
     <>
       <main>
@@ -39,7 +47,7 @@ const RouterContainer = () => {
           <Route path="/favourites" element={
             <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
               <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
-                <FavouritesPage />
+                <FavouritesPage onEventClick={onEventClick} />
               </FavouritesDataContext.Provider>
             </FestivalDataContext.Provider>
           }
@@ -47,7 +55,7 @@ const RouterContainer = () => {
           <Route path="/festivals" element={
             <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
               <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
-                <FestivalPage />
+                <FestivalPage onEventClick={onEventClick} />
               </FavouritesDataContext.Provider>
             </FestivalDataContext.Provider>
           }

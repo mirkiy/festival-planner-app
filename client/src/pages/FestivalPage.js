@@ -4,16 +4,10 @@ import FestivalDataContext from "../context/FestivalDataContext";
 import FavouritesDataContext from '../context/FavouritesDataContext';
 
 
-const FestivalPage = () => {
+const FestivalPage = ({onEventClick}) => {
 
   const { festivalData, setFestivalData } = useContext(FestivalDataContext);
   const { favouritesData, setFavouritesData } = useContext(FavouritesDataContext);
-
-  const onEventClick = (newFavourite) => {
-    if (!favouritesData.includes(newFavourite)) {
-      setFavouritesData(favouritesData => [...favouritesData, newFavourite])
-    }
-  }
 
   return (
     <EventList context={festivalData} onEventClick={onEventClick} />
