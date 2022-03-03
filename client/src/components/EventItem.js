@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import EventItemPopUp from "./EventItemPopUp";
+import EventItemPopUp from "./EventItemModal";
 import getImageFromEvent from "../helpers/getImageFromEvent";
 
 const EventItem = ({ event, onEventClick }) => {
@@ -9,7 +9,7 @@ const EventItem = ({ event, onEventClick }) => {
 
   const image = getImageFromEvent(event, "small-320");
 
-   const handleClick = () => {
+  const handleClick = () => {
         onEventClick(event);
     }
 
@@ -27,7 +27,7 @@ const EventItem = ({ event, onEventClick }) => {
                 </div>
         </div>
       </div>
-      {/* { !isHidden? <EventItemPopUp/> : null } */}
+      { !isHidden? <EventItemPopUp/> : null }
     </>
   );
 
