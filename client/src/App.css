@@ -1,3 +1,32 @@
+
+body {
+  background-color: grey;
+}
+.event-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.event-wrapper {
+  position: relative;
+  margin: 0.5rem;
+}
+.event-wrapper-title-container {
+  /* background-color: antiquewhite; */
+  position: absolute;
+  width: 100%;
+  /* max-width: 80%; */
+  top: 50%;
+  left: 0;
+  text-align: center;
+  /* margin-top: -25px; */
+}
+.event-wrapper-title {
+  text-transform: uppercase;
+  background-color: yellowgreen;
+  padding: 0.5vh 1.2vh;
+
 a {
   text-decoration: none;
+
 }
