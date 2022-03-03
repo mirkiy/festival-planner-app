@@ -10,7 +10,9 @@ const FestivalPage = () => {
   const { favouritesData, setFavouritesData } = useContext(FavouritesDataContext);
 
   const onEventClick = (newFavourite) => {
-    setFavouritesData(favouritesData => [...favouritesData, newFavourite])
+    if (!favouritesData.includes(newFavourite)) {
+      setFavouritesData(favouritesData => [...favouritesData, newFavourite])
+    }
   }
 
   return (
