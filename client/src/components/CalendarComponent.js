@@ -35,7 +35,6 @@ const CalendarComponent = () => {
 
     return (
         <>
-
             <Calendar
                 localizer={localizer}
                 events={myEvents}
@@ -44,8 +43,6 @@ const CalendarComponent = () => {
                 defaultDate={date}
                 style={{ height: '85vh', width: '100vh' }}
             />
-
-
         </>
     )
 }
