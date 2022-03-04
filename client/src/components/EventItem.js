@@ -1,23 +1,43 @@
-import React, { useState } from "react";
-import EventItemPopUp from "./EventItemPopUp";
+import React, { useEffect, useState } from "react";
+import EventItemPopUp from "./EventItemModal";
+
 import getImageFromEvent from "../helpers/getImageFromEvent";
+import { preventScroll, allowScroll } from "../helpers/scrollBehaviours";
 
 const EventItem = ({ event, onEventClick }) => {
+  // pop-up modal visibility state
+  const [shows, setShows] = useState(false);
 
-    // Toggle's render of pop-up modal window
-    const [isHidden, setIsHidden] = useState(true)
-    const [clicked, setClicked] = useState()
+  // image from event object
+  const image = getImageFromEvent(event, "small-320");
 
-    const image = getImageFromEvent(event, "small-320");
+  const handleClick = () => {
+    // add to favs / remove from favs
+    onEventClick(event);
+  };
 
-    const handleClick = () => {
-        onEventClick(event);
-        setClicked(clicked => !clicked);
+  const toggleHidden = () => {
+    setShows(!shows);
+
+    // helper functions to toggle scroll behaviour
+    !shows ? preventScroll() : allowScroll();
+  };
+
+  const onClickOutsideCloseModal = (event) => {
+    // checks that first child of clicked item exists to prevent error
+    if (!event.target.firstChild.classList) return;
+    
+    // checks that current clicked item has a child with "modal-wrapper" class
+    // if true, means that it's clicking outside of modal
+    if (event.target.firstChild.classList.contains("modal-wrapper")) {
+      toggleHidden();
     }
+  };
+
 
     return (
         <>
-            <div className="event-wrapper" onClick={() => setIsHidden(!isHidden)} >
+            <div className="event-wrapper" onClick={() => toggleHidden()} >
 
                 <img width="320px" height="180px" src={image.url} />
 
@@ -33,8 +53,12 @@ const EventItem = ({ event, onEventClick }) => {
                     </div>
                 </div>
             </div>
-            {/* { !isHidden? <EventItemPopUp/> : null } */}
-        </>
+      {shows ? (
+        <EventItemPopUp
+          toggleHidden={toggleHidden}
+          onClickOutsideCloseModal={onClickOutsideCloseModal}
+        />
+      ) : null}        </>
     );
 
 };
