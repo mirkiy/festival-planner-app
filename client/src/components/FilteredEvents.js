@@ -5,13 +5,20 @@ const FilteredEvents = ({ setSearch }) => {
     setSearch(event.target.value);
   };
   return (
-    <>
-      <input
-        type="text"
-        onChange={handleChange}
-        placeholder="Search for your event ..."
-      />
-    </>
+    <div className="search-body">
+      <div className="search-container">
+        <input
+          className="search-input"
+          type="text"
+          name="search"
+          onChange={handleChange}
+          placeholder="Search for your event ..."
+        />
+        <a href="#" className="search-btn">
+          <i className="fas fa-search"></i>
+        </a>
+      </div>
+    </div>
   );
 };
 

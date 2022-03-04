@@ -1,7 +1,8 @@
-@import './static/styles/modal.css';
+@import "./static/styles/modal.css";
+@import "./static/styles/search.css";
 
 body {
-  background-color: grey;
+  background-color: #b2e0df;
 }
 .event-gallery {
   display: flex;
@@ -13,14 +14,11 @@ body {
   margin: 0.5rem;
 }
 .event-wrapper-title-container {
-  /* background-color: antiquewhite; */
   position: absolute;
   width: 100%;
-  /* max-width: 80%; */
   top: 50%;
   left: 0;
   text-align: center;
-  /* margin-top: -25px; */
 }
 .event-wrapper-title {
   text-transform: uppercase;
@@ -30,10 +28,8 @@ body {
 
 a {
   text-decoration: none;
-
 }
 
-
-.hover-heart.fa.far.fa-heart::after{
+.hover-heart.fa.far.fa-heart::after {
   color: red;
 }
