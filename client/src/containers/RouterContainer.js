@@ -10,20 +10,9 @@ import FestivalDataContext from "../context/FestivalDataContext";
 import FavouritesDataContext from "../context/FavouritesDataContext";
 
 const RouterContainer = () => {
+  
   const [festivalData, setFestivalData] = useState([]);
   const [favouritesData, setFavouritesData] = useState([]);
-
-  const fetchData = () => {
-    fetch("http://localhost:8080/festivals")
-      .then((response) => response.json())
-      .then((data) => setFestivalData(data))
-      .catch((e) => console.error(e));
-  };
-
-  useEffect(() => {
-    fetchData()
-  }, []);
-
 
   const onEventClick = (newFavourite) => {
     if (favouritesData.includes(newFavourite)) {

@@ -11,6 +11,17 @@ const FestivalPage = ({ onEventClick }) => {
 
   const [finalFestivalData, setFinalFestivalData] = useState([])
 
+  const fetchData = () => {
+    fetch(`http://localhost:8080/festivals?`)
+      .then((response) => response.json())
+      .then((data) => setFestivalData(data))
+      .catch((e) => console.error(e));
+  };
+
+  useEffect(() => {
+    fetchData()
+  }, []);
+
   useEffect(() => {
     setFinalFestivalData(festivalData.length > 0 ? festivalData.map((event) => {
       const property = favouritesData.includes(event);
