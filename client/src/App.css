@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
-}
+@import './static/styles/modal.css';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: grey;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.event-gallery {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: row wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.event-wrapper {
+  position: relative;
+  margin: 0.5rem;
+}
+.event-wrapper-title-container {
+  /* background-color: antiquewhite; */
+  position: absolute;
+  width: 100%;
+  /* max-width: 80%; */
+  top: 50%;
+  left: 0;
+  text-align: center;
+  /* margin-top: -25px; */
+}
+.event-wrapper-title {
+  text-transform: uppercase;
+  background-color: yellowgreen;
+  padding: 0.5vh 1.2vh;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.hover-heart.fa.far.fa-heart::after{
+  color: red;
 }
