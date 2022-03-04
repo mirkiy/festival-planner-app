@@ -2,15 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import moment from 'moment';
-import FestivalDataContext from '../context/FestivalDataContext'
+import FavouritesDataContext from "../context/FavouritesDataContext";
 
 const CalendarComponent = () => {
 
     const localizer = momentLocalizer(moment);
 
-    let { festivalData } = useContext(FestivalDataContext)
+    let { favouritesData } = useContext(FavouritesDataContext)
 
-    const myEvents = festivalData.flatMap(event => {
+    const myEvents = favouritesData.flatMap(event => {
         return (event.performances ?
             event.performances.map(performance => {
                 return {
@@ -26,8 +26,8 @@ const CalendarComponent = () => {
 
     let date;
 
-    festivalData.length > 0 ?
-        date = new Date(festivalData[0].performances[0].start)
+    favouritesData.length > 0 ?
+        date = new Date(favouritesData[0].performances[0].start)
         :
         date = new Date()
 
@@ -35,19 +35,14 @@ const CalendarComponent = () => {
 
     return (
         <>
-            {festivalData.length > 0 ?
-                <Calendar
-                    localizer={localizer}
-                    events={myEvents}
-                    startAccessor="start"
-                    endAccessor="end"
-                    defaultDate={date}
-                    style={{ height: '85vh', width: '100vh' }}
-                /> :
-                <div>
-                    <h1>Loading Calendar</h1>
-                </div>}
-
+            <Calendar
+                localizer={localizer}
+                events={myEvents}
+                startAccessor="start"
+                endAccessor="end"
+                defaultDate={date}
+                style={{ height: '85vh', width: '100vh' }}
+            />
         </>
     )
 }

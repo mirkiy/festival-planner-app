@@ -32,3 +32,8 @@ a {
   text-decoration: none;
 
 }
+
+
+.hover-heart.fa.far.fa-heart::after{
+  color: red;
+}
