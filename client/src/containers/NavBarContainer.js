@@ -12,7 +12,7 @@ const NavBarContainer = () => {
       }}
     >
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected="home">
+      <SideNav.Nav defaultSelected={window.location.href.split("/")[3] || "home"}>
         <NavItem eventKey="home">
           <NavIcon>
             <Link to="/">
@@ -65,7 +65,7 @@ const NavBarContainer = () => {
             <Link to="/calendar">Calendar</Link>
           </NavText>
         </NavItem>
-        <NavItem eventKey="login">
+        <NavItem eventKey="form">
           <NavIcon>
             <Link to="/form">
               <i className="fa far fa-sign-in" style={{ fontSize: "1.75em" }} />
