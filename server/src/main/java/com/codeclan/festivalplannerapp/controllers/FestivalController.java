@@ -32,18 +32,23 @@ public class FestivalController {
     private String apiKey;
 
     @GetMapping("/festivals")
-    public ResponseEntity<Object> jazz(@RequestParam("id") String id) throws Exception {
-
+    public ResponseEntity<Object> jazz(@RequestParam(value = "id", required = false) String id) throws Exception {
+        System.out.println(id);
+        /*
         Festival found = festivalRepository.findById(id).orElse(null);
         if (found != null ){
             // if found, return it from database
             return new ResponseEntity<>(found.getJsonEventObject(), HttpStatus.OK);
         }
+         */
+
 
         // if not found, we will get it from API, upload to our database and then send it back to user
         // calling the method we got from the Internet for the algorithm
         // we pass the api keys here otherwise it wasn't working 🤷
+//        String url = HmacSha1Signature.getSignedData(apiKey, secretKey, "festival=" + id);
         String url = HmacSha1Signature.getSignedData(apiKey, secretKey, "festival=" + id);
+
 
         // This below is like calling JavaScript's fetch!
         // we pass the url signed up with the algorithm

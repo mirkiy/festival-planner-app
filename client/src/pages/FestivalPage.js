@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import EventList from '../components/EventList'
 import FestivalDataContext from "../context/FestivalDataContext";
 import FavouritesDataContext from '../context/FavouritesDataContext';
@@ -11,8 +12,10 @@ const FestivalPage = ({ onEventClick }) => {
 
   const [finalFestivalData, setFinalFestivalData] = useState([])
 
+  const currentSearch = useLocation().search.split("=")[1]; // gets current search parameter, takes value after equal signs
+
   const fetchData = () => {
-    fetch(`http://localhost:8080/festivals?`)
+    fetch(`http://localhost:8080/festivals?id=${currentSearch}`)
       .then((response) => response.json())
       .then((data) => setFestivalData(data))
       .catch((e) => console.error(e));

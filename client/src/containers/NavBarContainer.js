@@ -4,7 +4,7 @@ import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 const NavBarContainer = () => {
-  const currentRoute = useLocation().pathname;
+  const currentPath = useLocation().pathname;
 
   return (
     <SideNav
@@ -14,7 +14,7 @@ const NavBarContainer = () => {
       }}
     >
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected={currentRoute}>
+      <SideNav.Nav defaultSelected={currentPath}>
         <NavItem eventKey="/">
           <NavIcon>
             <Link to="/">
