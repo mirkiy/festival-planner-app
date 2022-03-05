@@ -1,17 +1,25 @@
-import React, { useContext } from 'react'
-import FavouritesDataContext from '../context/FavouritesDataContext'
-import EventList from '../components/EventList';
+import React, { useContext } from "react";
+import FavouritesDataContext from "../context/FavouritesDataContext";
+import EventList from "../components/EventList";
 
 const FavouritesPage = ({ onEventClick }) => {
+  const { favouritesData, setFavouritesData } = useContext(
+    FavouritesDataContext
+  );
 
-  const { favouritesData, setFavouritesData } = useContext(FavouritesDataContext);
-
-  console.log(favouritesData)
-
+  if (favouritesData && favouritesData.length > 0) {
+    // this maps throught favouritesData and appends .favourited to all of them so the heart icon renders red !
+    favouritesData.forEach((favourite) => {
+      if (!favourite.favourited) favourite.favourited = true;
+    });
+  }
 
   return (
-    <EventList context={favouritesData} onEventClick={onEventClick} />
-  )
-}
+    <EventList
+      context={favouritesData ? favouritesData : null}
+      onEventClick={onEventClick}
+    />
+  );
+};
 
-export default FavouritesPage
+export default FavouritesPage;

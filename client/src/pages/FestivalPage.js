@@ -29,10 +29,23 @@ const FestivalPage = ({ onEventClick }) => {
   }, [festival]);
 
   useEffect(() => {
+    /**
+     * BUG: it's not save which ones are in favourites because when we fetch data from another festival
+     * the 'favourited' property disappears
+     *
+     * we need to somehow select data that's already inside the object
+     */
     setFinalFestivalData(
       festivalData.length > 0
         ? festivalData.map((event) => {
-            const property = favouritesData.includes(event);
+            // instead of checking if it's inside array we check their event codes which are unique
+            // put them inside an array of just the codes
+            const favouriteEventCodes = favouritesData.map(
+              (favouriteEvent) => favouriteEvent.code
+            );
+
+            // we check that event.code is inside favourites codes, if match, attach property
+            const property = favouriteEventCodes.includes(event.code);
             event.favourited = property;
             return event;
           })
