@@ -1,10 +1,14 @@
 import React, {  useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import EventItem from "./EventItem";
 import { allowScroll } from "../helpers/scrollBehaviours";
 
 const EventList = ({ context, onEventClick }) => {
+    const currentPath = useLocation().pathname;
+
     const eventListNodes = context.map((event, index) => {
-        return <EventItem key={index} event={event} onEventClick={onEventClick} />;
+        // we pass down currentPath + index as key so it's completely unique
+        return <EventItem key={`${currentPath}-${index}`} event={event} onEventClick={onEventClick} />;
     });
 
     useEffect(() => {

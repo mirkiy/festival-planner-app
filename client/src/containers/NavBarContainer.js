@@ -34,15 +34,15 @@ const NavBarContainer = () => {
           </NavIcon>
           <NavText>Festivals</NavText>
 
-          <NavItem eventKey="festivals/jazz">
+          <NavItem eventKey="/festivals/jazz">
             <NavText>
-              <Link to="/festivals?name=jazz">Jazz</Link>
+              <Link to="/festivals/jazz">Jazz</Link>
             </NavText>
           </NavItem>
 
-          <NavItem eventKey="festivals/book">
+          <NavItem eventKey="/festivals/book">
             <NavText>
-              <Link to="/festivals?name=book">Book</Link>
+              <Link to="/festivals/book">Book</Link>
             </NavText>
           </NavItem>
         </NavItem>

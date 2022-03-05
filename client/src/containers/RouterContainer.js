@@ -9,18 +9,20 @@ import HomePage from "../pages/HomePage";
 import FestivalDataContext from "../context/FestivalDataContext";
 import FavouritesDataContext from "../context/FavouritesDataContext";
 
+
 const RouterContainer = () => {
-  
   const [festivalData, setFestivalData] = useState([]);
   const [favouritesData, setFavouritesData] = useState([]);
 
   const onEventClick = (newFavourite) => {
     if (favouritesData.includes(newFavourite)) {
-      setFavouritesData(favouritesData => favouritesData.filter(favourite => favourite !== newFavourite))
+      setFavouritesData((favouritesData) =>
+        favouritesData.filter((favourite) => favourite !== newFavourite)
+      );
     } else {
-      setFavouritesData(favouritesData => [...favouritesData, newFavourite])
+      setFavouritesData((favouritesData) => [...favouritesData, newFavourite]);
     }
-  }
+  };
 
   return (
     <>
@@ -29,29 +31,45 @@ const RouterContainer = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
 
-          <Route path="/calendar" element={
-            <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
-              <CalendarPage />
-            </FavouritesDataContext.Provider>
-          }
-          />
-          <Route path="/favourites" element={
-            <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
-              <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
-                <FavouritesPage onEventClick={onEventClick} />
+          <Route
+            path="/calendar"
+            element={
+              <FavouritesDataContext.Provider
+                value={{ favouritesData, setFavouritesData }}
+              >
+                <CalendarPage />
               </FavouritesDataContext.Provider>
-            </FestivalDataContext.Provider>
-          }
+            }
           />
-          <Route path="/festivals" element={
-            <FestivalDataContext.Provider value={{ festivalData, setFestivalData }}>
-              <FavouritesDataContext.Provider value={{ favouritesData, setFavouritesData }}>
-                <FestivalPage onEventClick={onEventClick} />
-              </FavouritesDataContext.Provider>
-            </FestivalDataContext.Provider>
-          }
+          <Route
+            path="/favourites"
+            element={
+              <FestivalDataContext.Provider
+                value={{ festivalData, setFestivalData }}
+              >
+                <FavouritesDataContext.Provider
+                  value={{ favouritesData, setFavouritesData }}
+                >
+                  <FavouritesPage onEventClick={onEventClick} />
+                </FavouritesDataContext.Provider>
+              </FestivalDataContext.Provider>
+            }
+          />
+          <Route
+            exact path="/festivals/:festival"
+            element={
+              <FestivalDataContext.Provider
+                value={{ festivalData, setFestivalData }}
+              >
+                <FavouritesDataContext.Provider
+                  value={{ favouritesData, setFavouritesData }}
+                >
+                  <FestivalPage key={window.location.pathname} onEventClick={onEventClick} />
+                </FavouritesDataContext.Provider>
+              </FestivalDataContext.Provider>
+            }
+          />
 
-          />
           <Route path="/form" element={<FormPage />} />
         </Routes>
       </main>
