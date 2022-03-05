@@ -30,7 +30,7 @@ import { allowScroll } from "../helpers/scrollBehaviours";
 
 const EventList = ({ context, onEventClick, search }) => {
   const eventListNodes = context.map((event, index) => {
-    if (event.title.toLowerCase().includes(search.toLowerCase()))
+    if (event.title?.toLowerCase().includes(search?.toLowerCase()))
       return (
         <EventItem key={index} event={event} onEventClick={onEventClick} />
       );
