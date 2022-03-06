@@ -33,8 +33,7 @@ public class FestivalController {
 
     @GetMapping("/festivals")
     public ResponseEntity<Object> jazz(@RequestParam(value = "id", required = false) String id) throws Exception {
-        System.out.println(id);
-        /*
+        /* ADDED: CHECK IF IN DATABASE ALREADY
         Festival found = festivalRepository.findById(id).orElse(null);
         if (found != null ){
             // if found, return it from database
@@ -56,12 +55,14 @@ public class FestivalController {
         RestTemplate restTemplate = new RestTemplate();
         Object[] response = restTemplate.getForObject(url, Object[].class);
 
+        /* ADDED: RETURN ERROR IF NOTHING SHOWN
         // we check that the response is not empty (we need to check it on the Festival model)
         // if it's empty, we want to throw an Exception not a valid Response Entity.
         if (response.length <= 0)  {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "entity not found");
         }
+         */
 
         // Map response to Java object
         // now we create a Festival object. takes two parameters:
