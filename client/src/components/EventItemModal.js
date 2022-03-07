@@ -3,7 +3,6 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 const EventItemPopUp = ({ toggleHidden, onClickOutsideCloseModal }) => {
-  
   return (
     <div
       className="modal-container"
@@ -13,9 +12,12 @@ const EventItemPopUp = ({ toggleHidden, onClickOutsideCloseModal }) => {
         <Modal.Header>
           <Modal.Title>Modal title</Modal.Title>
           {/* below is the CROSS MARK. needs to be changed to icon */}
-          <div style={{width: "36px", height: "36px"}}>
-            <span onClick={() => toggleHidden()} style={{fontSize: "1.75em", color:"grey", cursor:"pointer"}} >
-            &#10060;
+          <div style={{ width: "36px", height: "36px" }}>
+            <span
+              onClick={() => toggleHidden()}
+              style={{ fontSize: "1.75em", color: "grey", cursor: "pointer" }}
+            >
+              &#10060;
             </span>
           </div>
         </Modal.Header>
