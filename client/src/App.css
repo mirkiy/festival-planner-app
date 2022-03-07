@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+.fa.far.fa-heart {
+  text-shadow: 2px 3px 13px rgb(134 94 101);
+}
+
 .hover-heart.fa.far.fa-heart::after {
   color: red;
 }

@@ -38,6 +38,7 @@ const EventItem = ({ event, onEventClick }) => {
     <>
       <div className="event-wrapper">
         <img
+          className="rounded shadow"
           width="320px"
           height="180px"
           src={image.url}
