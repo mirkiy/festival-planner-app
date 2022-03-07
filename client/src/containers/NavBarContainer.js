@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 const NavBarContainer = () => {
+  const currentPath = useLocation().pathname;
+
   return (
     <SideNav
       style={{ position: "fixed" }}
@@ -12,8 +14,8 @@ const NavBarContainer = () => {
       }}
     >
       <SideNav.Toggle />
-      <SideNav.Nav defaultSelected={window.location.href.split("/")[3] || "home"}>
-        <NavItem eventKey="home">
+      <SideNav.Nav defaultSelected={currentPath}>
+        <NavItem eventKey="/">
           <NavIcon>
             <Link to="/">
               <i className="fa fa-fw fa-home" style={{ fontSize: "1.75em" }} />
@@ -23,7 +25,7 @@ const NavBarContainer = () => {
             <Link to="/">Home</Link>
           </NavText>
         </NavItem>
-        <NavItem eventKey="festivals">
+        <NavItem eventKey="/festivals">
           <NavIcon>
             <i
               className="fa fal fa-theater-masks"
@@ -31,18 +33,21 @@ const NavBarContainer = () => {
             />
           </NavIcon>
           <NavText>Festivals</NavText>
-          <NavItem eventKey="festivals/jazz">
+
+          <NavItem eventKey="/festivals/jazz">
             <NavText>
-              <Link to="/festivals">Jazz</Link>
+              <Link to="/festivals/jazz">Jazz</Link>
             </NavText>
           </NavItem>
-          <NavItem eventKey="festivals/book">
+
+          <NavItem eventKey="/festivals/book">
             <NavText>
-              <Link to="/festivals">Book</Link>
+              <Link to="/festivals/book">Book</Link>
             </NavText>
           </NavItem>
         </NavItem>
-        <NavItem eventKey="favourites">
+
+        <NavItem eventKey="/favourites">
           <NavIcon>
             <Link to="/favourites">
               <i className="fa far fa-heart" style={{ fontSize: "1.75em" }} />
@@ -52,7 +57,7 @@ const NavBarContainer = () => {
             <Link to="/favourites">Favourites</Link>
           </NavText>
         </NavItem>
-        <NavItem eventKey="calendar">
+        <NavItem eventKey="/calendar">
           <NavIcon>
             <Link to="/calendar">
               <i

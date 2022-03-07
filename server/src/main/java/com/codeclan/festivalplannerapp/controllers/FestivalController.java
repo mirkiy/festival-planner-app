@@ -9,8 +9,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -25,13 +32,22 @@ public class FestivalController {
     private String apiKey;
 
     @GetMapping("/festivals")
-    public ResponseEntity<Object> jazz() throws Exception {
-        // the search will change in future this is for testing
-        String search = "festival=jazz";
+    public ResponseEntity<Object> jazz(@RequestParam(value = "id", required = false) String id) throws Exception {
+        /* ADDED: CHECK IF IN DATABASE ALREADY
+        Festival found = festivalRepository.findById(id).orElse(null);
+        if (found != null ){
+            // if found, return it from database
+            return new ResponseEntity<>(found.getJsonEventObject(), HttpStatus.OK);
+        }
+         */
 
+
+        // if not found, we will get it from API, upload to our database and then send it back to user
         // calling the method we got from the Internet for the algorithm
         // we pass the api keys here otherwise it wasn't working 🤷
-        String url = HmacSha1Signature.getSignedData(apiKey, secretKey, search);
+//        String url = HmacSha1Signature.getSignedData(apiKey, secretKey, "festival=" + id);
+        String url = HmacSha1Signature.getSignedData(apiKey, secretKey, "festival=" + id);
+
 
         // This below is like calling JavaScript's fetch!
         // we pass the url signed up with the algorithm
@@ -39,26 +55,25 @@ public class FestivalController {
         RestTemplate restTemplate = new RestTemplate();
         Object[] response = restTemplate.getForObject(url, Object[].class);
 
+        /* ADDED: RETURN ERROR IF NOTHING SHOWN
+        // we check that the response is not empty (we need to check it on the Festival model)
+        // if it's empty, we want to throw an Exception not a valid Response Entity.
+        if (response.length <= 0)  {
+            throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "entity not found");
+        }
+         */
+
         // Map response to Java object
         // now we create a Festival object. takes two parameters:
         // 1. Name of festival (fringe, jazz, book, etc), works as unique id
         // 2. The whole response we get from festival API as an object
-        Festival newFestival = new Festival("jazz", response);
+        Festival newFestival = new Festival(id, response);
 
-        // we save it
-        // POTENTIALLY WE WOULD BE ONLY CREATING OBJECT AND SAVING
-        // IF THE FESTIVAL IS NOT ALREADY ON DATABASE
-        // BUT THIS IS LIKE A DEMO SO NEVERMIND THAT NOW
+        // we save it in our database
         festivalRepository.save(newFestival);
 
-        // now we retrieve back
-        // in the future, before running the code above it will check if
-        // that festival exists or not (by festival name property, which works as the ID)
-        // the .orElse(null) is because findById returns Optional, so need to handle in case returns nothing
-        Festival foundFestival = festivalRepository.findById("jazz").orElse(null);
-        Object json = foundFestival.getJsonEventObject(); // FIX THIS
-
-        // we send it to the frontend
-        return new ResponseEntity<>(json, HttpStatus.OK);
+        // we send the response back to the frontend
+        return new ResponseEntity<>(newFestival.getJsonEventObject(), HttpStatus.OK);
     }
 }

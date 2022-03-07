@@ -7,9 +7,21 @@ const FavouritesPage = ({ onEventClick }) => {
     FavouritesDataContext
   );
 
-  console.log(favouritesData);
 
-  return <EventList context={favouritesData} onEventClick={onEventClick} />;
+  if (favouritesData && favouritesData.length > 0) {
+    // this maps throught favouritesData and appends .favourited to all of them so the heart icon renders red !
+    favouritesData.forEach((favourite) => {
+      if (!favourite.favourited) favourite.favourited = true;
+    });
+  }
+
+  return (
+    <EventList
+      context={favouritesData ? favouritesData : null}
+      onEventClick={onEventClick}
+    />
+  );
+
 };
 
 export default FavouritesPage;

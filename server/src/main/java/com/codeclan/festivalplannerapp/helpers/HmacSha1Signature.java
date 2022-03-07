@@ -45,7 +45,11 @@ public class HmacSha1Signature {
 
     // this below is the method we can play around with
     public static String getSignedData(String apiKey, String secretKey, String search) throws Exception {
-        String query = "/events?" + search + "&year=2021&key=" + apiKey;
+        // this two constants below can change
+        String SIZE = "50"; // number of events per request to Edinburgh Festivals API
+        String YEAR = "2021";
+
+        String query = "/events?" + search + "&size=" + SIZE + "&year=" + YEAR +"&key=" + apiKey;
         String signature = calculateRFC2104HMAC(query, secretKey);
         return "https://api.edinburghfestivalcity.com" + query + "&signature=" + signature;
     }
