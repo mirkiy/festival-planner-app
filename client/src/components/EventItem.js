@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import EventItemPopUp from "./EventItemModal";
+import EventItemModal from "./EventItemModal";
 
 import getImageFromEvent from "../helpers/getImageFromEvent";
 import { preventScroll, allowScroll } from "../helpers/scrollBehaviours";
@@ -34,6 +34,15 @@ const EventItem = ({ event, onEventClick }) => {
     }
   };
 
+  const maxCharacterCount = (string, max) => {
+    // ADDED THIS
+    if (string.length <= max) {
+      return string;
+    }
+
+    return string.slice(0, max) + "...";
+  };
+
   return (
     <>
       <div className="event-wrapper">
@@ -56,13 +65,14 @@ const EventItem = ({ event, onEventClick }) => {
             />
           </div>
           <span className="event-wrapper-title" onClick={() => toggleHidden()}>
-            {event.title}
+            {maxCharacterCount(event.title, 58)}
           </span>
           {/* <h2>{event.year}</h2> */}
         </div>
       </div>
       {shows ? (
-        <EventItemPopUp
+        <EventItemModal
+          currentEvent={event}
           toggleHidden={toggleHidden}
           onClickOutsideCloseModal={onClickOutsideCloseModal}
         />

@@ -1,5 +1,6 @@
 @import "./static/styles/modal.css";
 @import "./static/styles/search.css";
+@import "./static/styles/event-cards.css";
 
 body {
   background-color: #b2e0df;
