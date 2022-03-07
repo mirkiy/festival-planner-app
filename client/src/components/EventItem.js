@@ -36,17 +36,16 @@ const EventItem = ({ event, onEventClick }) => {
 
   return (
     <>
-      <div className="event-wrapper" >
-        <img width="320px" height="180px" src={image.url} onClick={() => toggleHidden()}/>
+      <div className="event-wrapper">
+        <img
+          width="320px"
+          height="180px"
+          src={image.url}
+          onClick={() => toggleHidden()}
+        />
 
-        <div className="event-wrapper-title-container" >
-          <span className="event-wrapper-title" onClick={() => toggleHidden()}>{event.title}</span>
-          {/* <h2>{event.year}</h2> */}
-          <div
-            className="hover-heart"
-            style={{ height: "2px", width: "2px" }}
-            onClick={handleClick}
-          >
+        <div className="event-wrapper-title-container">
+          <div className="hover-heart" onClick={handleClick}>
             <i
               className="fa far fa-heart"
               style={{
@@ -55,6 +54,10 @@ const EventItem = ({ event, onEventClick }) => {
               }}
             />
           </div>
+          <span className="event-wrapper-title" onClick={() => toggleHidden()}>
+            {event.title}
+          </span>
+          {/* <h2>{event.year}</h2> */}
         </div>
       </div>
       {shows ? (
