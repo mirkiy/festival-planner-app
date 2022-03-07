@@ -4,10 +4,23 @@
 body {
   background-color: #b2e0df;
 }
+
+main {
+  /* ADDED THIS */
+  width: 100%;
+}
+
+.rbc-calendar {
+  /* ADDED THIS */
+  padding-top: 5vh;
+  margin: auto;
+}
+
 .event-gallery {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  /* CHANGED THIS */
+  justify-content: space-around;
 }
 .event-wrapper {
   position: relative;
@@ -32,7 +45,7 @@ a {
   text-decoration: none;
 }
 
-.fa.far.fa-heart {
+.hover-heart > .fa.far.fa-heart {
   text-shadow: 2px 3px 13px rgb(134 94 101);
 }
 
