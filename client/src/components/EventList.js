@@ -10,20 +10,27 @@ const EventList = ({ context, onEventClick, search = null }) => {
   if (search === null) {
     eventListNodes = context.map((event, index) => {
       return (
-        <EventItem key={`${currentPath}-${index}`} event={event} onEventClick={onEventClick} />
+        <EventItem
+          key={`${currentPath}-${index}`}
+          event={event}
+          onEventClick={onEventClick}
+        />
       );
     });
   } else {
     eventListNodes = context.map((event, index) => {
       if (event.title?.toLowerCase().includes(search?.toLowerCase()))
         return (
-          <EventItem key={`${currentPath}-${index}`} event={event} onEventClick={onEventClick} />
+          <EventItem
+            key={`${currentPath}-${index}`}
+            event={event}
+            onEventClick={onEventClick}
+          />
         );
     });
   }
-
-  console.log(eventListNodes);
-
+  
+  
   useEffect(() => {
     // BUG: removing last element from favourite events
     // caused the element to dismount before running allowScroll

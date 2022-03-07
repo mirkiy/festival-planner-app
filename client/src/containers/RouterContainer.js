@@ -9,15 +9,18 @@ import HomePage from "../pages/HomePage";
 import FestivalDataContext from "../context/FestivalDataContext";
 import FavouritesDataContext from "../context/FavouritesDataContext";
 
-
 const RouterContainer = () => {
   const [festivalData, setFestivalData] = useState([]);
   const [favouritesData, setFavouritesData] = useState([]);
 
   const onEventClick = (newFavourite) => {
-    if (favouritesData.includes(newFavourite)) {
+    const favouritesDataCodes = favouritesData.map(
+      (favourite) => favourite.code
+    );
+
+    if (favouritesDataCodes.includes(newFavourite.code)) {
       setFavouritesData((favouritesData) =>
-        favouritesData.filter((favourite) => favourite !== newFavourite)
+        favouritesData.filter((favourite) => favourite.code !== newFavourite.code)
       );
     } else {
       setFavouritesData((favouritesData) => [...favouritesData, newFavourite]);
@@ -56,7 +59,8 @@ const RouterContainer = () => {
             }
           />
           <Route
-            exact path="/festivals/:festival"
+            exact
+            path="/festivals/:festival"
             element={
               <FestivalDataContext.Provider
                 value={{ festivalData, setFestivalData }}
@@ -64,7 +68,10 @@ const RouterContainer = () => {
                 <FavouritesDataContext.Provider
                   value={{ favouritesData, setFavouritesData }}
                 >
-                  <FestivalPage key={window.location.pathname} onEventClick={onEventClick} />
+                  <FestivalPage
+                    key={window.location.pathname}
+                    onEventClick={onEventClick}
+                  />
                 </FavouritesDataContext.Provider>
               </FestivalDataContext.Provider>
             }
