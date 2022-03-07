@@ -16,11 +16,13 @@ body {
 .event-wrapper-title-container {
   position: absolute;
   width: 100%;
-  top: 50%;
-  left: 0;
+  top: 54%;
+  /* left: 0; */
   text-align: center;
 }
 .event-wrapper-title {
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
   background-color: yellowgreen;
   padding: 0.5vh 1.2vh;
@@ -32,4 +34,12 @@ a {
 
 .hover-heart.fa.far.fa-heart::after {
   color: red;
+}
+
+.hover-heart {
+  height: 2px;
+  width: 2px;
+  position: relative;
+  top: -80px;
+  left: 260px;
 }
