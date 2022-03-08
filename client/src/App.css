@@ -29,7 +29,7 @@ body {
   width: 100%;
   top: 54%;
   text-align: center;
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 .event-wrapper-title {
   /* display: flex;
@@ -55,6 +55,7 @@ body {
   /* font-style: italic; */
   color: rgb(192, 24, 178);
   /* color: rgb(226, 13, 155); */
+  opacity: 0.8;
 }
 
 a {
@@ -72,7 +73,7 @@ a {
 }
 
 .hover-heart.fa.far.fa-heart::after {
-  color: red;
+  color: rgb(192, 24, 178);
 }
 
 .hover-heart {

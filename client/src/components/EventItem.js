@@ -55,7 +55,7 @@ const EventItem = ({ event, onEventClick }) => {
               className="fa far fa-heart"
               style={{
                 fontSize: "1.75em",
-                color: event.favourited ? "red" : "white",
+                color: event.favourited ? "rgb(192, 24, 178)" : "white",
               }}
             />
           </div>
