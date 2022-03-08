@@ -25,6 +25,9 @@ body {
   margin: 0.5rem;
   cursor: pointer;
 }
+.event-wrapper:hover {
+  opacity: 0.8;
+}
 .event-wrapper-title-container {
   position: absolute;
   width: 100%;
@@ -33,12 +36,6 @@ body {
   opacity: 0.8;
 }
 .event-wrapper-title {
-  /* display: flex;
-  justify-content: center;
-  text-transform: uppercase;
-  background-color: snow;
-  padding: 0.5vh 1.2vh;
-  font-weight: bold; */
   display: flex;
   justify-content: center;
   text-transform: uppercase;
@@ -53,9 +50,7 @@ body {
   font-family: "Bungee Shade";
   letter-spacing: 2px;
   font-size: larger;
-  /* font-style: italic; */
   color: var(--main-font-color);
-  /* color: rgb(226, 13, 155); */
 }
 
 a {
