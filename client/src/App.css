@@ -1,27 +1,13 @@
 @import "./static/styles/modal.css";
 @import "./static/styles/search.css";
-@import "./static/styles/event-cards.css";
 
 body {
   background-color: #b2e0df;
 }
-
-main {
-  /* ADDED THIS */
-  width: 100%;
-}
-
-.rbc-calendar {
-  /* ADDED THIS */
-  padding-top: 5vh;
-  margin: auto;
-}
-
 .event-gallery {
   display: flex;
   flex-flow: row wrap;
-  /* CHANGED THIS */
-  justify-content: space-around;
+  justify-content: center;
 }
 .event-wrapper {
   position: relative;
