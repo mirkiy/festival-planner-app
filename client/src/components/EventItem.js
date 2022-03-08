@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import EventItemPopUp from "./EventItemModal";
-
+import EventItemModal from "./EventItemModal";
 import getImageFromEvent from "../helpers/getImageFromEvent";
 import { preventScroll, allowScroll } from "../helpers/scrollBehaviours";
 
@@ -67,7 +66,8 @@ const EventItem = ({ event, onEventClick }) => {
         </div>
       </div>
       {shows ? (
-        <EventItemPopUp
+        <EventItemModal
+          currentEvent={event}
           toggleHidden={toggleHidden}
           onClickOutsideCloseModal={onClickOutsideCloseModal}
         />
