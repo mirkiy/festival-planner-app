@@ -2,13 +2,14 @@
 @import "./static/styles/search.css";
 @import "./static/styles/navbar.css";
 @import "./static/styles/footer.css";
-@import "./static/styles/mainPage.css";
+@import "./static/styles/homepage.css";
 
 :root {
   --main-color: #b6cdbd;
   --second-color: #89a492;
   --dark-color: #667a6c;
   --icons-color: snow;
+  --main-font-color: rgb(192, 24, 178);
 }
 
 body {
@@ -44,8 +45,8 @@ body {
   background-color: snow;
   padding: 0.5vh 1.2vh;
   font-weight: bolder;
-  height: 66px;
-  /* height: 50px; */
+  /* height: 66px; */
+  height: 35px;
   width: 300px;
   margin: 0 auto;
   overflow: hidden;
@@ -53,7 +54,7 @@ body {
   letter-spacing: 2px;
   font-size: larger;
   /* font-style: italic; */
-  color: rgb(192, 24, 178);
+  color: var(--main-font-color);
   /* color: rgb(226, 13, 155); */
 }
 

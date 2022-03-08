@@ -8,8 +8,8 @@ import InternationalImage from "../static/images/international.jpg";
 
 const HomePage = () => {
   return (
-    <>
-      <section className="main-page-gallery">
+    <main className="home-page-container">
+      <section className="home-page-gallery">
         <div className="event-wrapper">
           <img
             class="rounded shadow"
@@ -36,7 +36,7 @@ const HomePage = () => {
         </div>
       </section>
       <h1>Edinfest planner</h1>
-      <section className="main-page-gallery">
+      <section className="home-page-gallery">
         <div className="event-wrapper">
           <img
             class="rounded shadow"
@@ -62,7 +62,7 @@ const HomePage = () => {
           />
         </div>
       </section>
-    </>
+    </main>
   );
 };
 
