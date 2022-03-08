@@ -1,8 +1,12 @@
 @import "./static/styles/modal.css";
 @import "./static/styles/search.css";
 
+:root {
+  --main-color: #b6cdbd;
+}
+
 body {
-  background-color: #b2e0df;
+  background-color: var(--main-color);
 }
 .event-gallery {
   display: flex;
@@ -12,20 +16,33 @@ body {
 .event-wrapper {
   position: relative;
   margin: 0.5rem;
+  cursor: pointer;
 }
 .event-wrapper-title-container {
   position: absolute;
   width: 100%;
   top: 54%;
-  /* left: 0; */
   text-align: center;
+  opacity: 0.8;
 }
 .event-wrapper-title {
+  /* display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: snow;
+  padding: 0.5vh 1.2vh;
+  font-weight: bold; */
   display: flex;
   justify-content: center;
   text-transform: uppercase;
-  background-color: yellowgreen;
+  background-color: snow;
   padding: 0.5vh 1.2vh;
+  font-weight: bold;
+  height: 33px;
+  /* height: 50px; */
+  width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 a {
@@ -44,6 +61,14 @@ a {
   height: 2px;
   width: 2px;
   position: relative;
-  top: -80px;
-  left: 260px;
+  top: -85px;
+  left: 270px;
+}
+
+.rounded {
+  border-radius: 1.7rem !important;
+}
+
+.sidenav---sidenav---_2tBP {
+  background: var(--main-color) !important;
 }

@@ -7,7 +7,6 @@ const FavouritesPage = ({ onEventClick }) => {
     FavouritesDataContext
   );
 
-
   if (favouritesData && favouritesData.length > 0) {
     // this maps throught favouritesData and appends .favourited to all of them so the heart icon renders red !
     favouritesData.forEach((favourite) => {
@@ -15,13 +14,25 @@ const FavouritesPage = ({ onEventClick }) => {
     });
   }
 
+  // get all favourite events from local storage still doesn't work :(
+  // const getEventsFromLocalStorage = () => {
+  //   const favourite = [];
+  //   const keys = Object.keys(localStorage);
+
+  //   keys.forEach((key) => {
+  //     favourite.push(localStorage.getItem(key));
+  //   });
+
+  //   setFavouritesData(favourite);
+  // };
+
   return (
     <EventList
+      // context={favouritesData ? favouritesData : null}
       context={favouritesData ? favouritesData : null}
       onEventClick={onEventClick}
     />
   );
-
 };
 
 export default FavouritesPage;

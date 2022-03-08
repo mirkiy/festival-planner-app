@@ -1,7 +1,8 @@
 .search-body {
   margin: 0;
   padding: 0;
-  background-color: #b2e0df;
+  /* background-color: #b6cdbd; */
+  background-color: var(--main-color);
   height: 7vh;
   display: flex;
   justify-content: center;
@@ -40,7 +41,8 @@
 }
 
 .search-container .search-btn .fas {
-  color: #5cbdbb;
+  /* color: #5cbdbb; */
+  color: #b6cdbd;
 }
 
 @keyframes hoverShake {
@@ -59,5 +61,6 @@
 }
 
 .search-container:hover {
-  animation: hoverShake 0.15s linear 3;
+  /* animation: hoverShake 0.15s linear 3; */
+  animation: hoverShake 2s linear 1;
 }

@@ -14,6 +14,11 @@ const EventItem = ({ event, onEventClick }) => {
   const handleClick = () => {
     // add to favs / remove from favs
     onEventClick(event);
+
+    // adding/removing event to/from local storage still doesn't work :(
+    !event.favourited
+      ? localStorage.setItem(event.code, JSON.stringify(event))
+      : localStorage.removeItem(event.code, JSON.stringify(event));
   };
 
   const toggleHidden = () => {
