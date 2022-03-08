@@ -11,24 +11,15 @@ import FavouritesDataContext from "../context/FavouritesDataContext";
 
 const RouterContainer = () => {
   const [festivalData, setFestivalData] = useState([]);
-  const [favouritesData, setFavouritesData] = useState([]);
-
-  const getEventsFromLocalStorage = () => {
-    const favourite = [];
-    const keys = Object.keys(localStorage);
-
-    keys.forEach((key) => {
-      favourite.push(localStorage.getItem(key));
-    });
-
-    return favourite;
-  };
+  const [favouritesData, setFavouritesData] = useState(() => {
+    const storage = localStorage.getItem("favourites");
+    const parsedStorage = JSON.parse(storage);
+    return parsedStorage || [];
+  });
 
   useEffect(() => {
-    setFavouritesData(
-      getEventsFromLocalStorage.length > 0 ? getEventsFromLocalStorage : []
-    );
-  }, []);
+    localStorage.setItem("favourites", JSON.stringify(favouritesData))
+  }, [favouritesData])
 
   const onEventClick = (newFavourite) => {
     const favouritesDataCodes = favouritesData.map(

@@ -14,18 +14,6 @@ const FavouritesPage = ({ onEventClick }) => {
     });
   }
 
-  // get all favourite events from local storage still doesn't work :(
-  // const getEventsFromLocalStorage = () => {
-  //   const favourite = [];
-  //   const keys = Object.keys(localStorage);
-
-  //   keys.forEach((key) => {
-  //     favourite.push(localStorage.getItem(key));
-  //   });
-
-  //   setFavouritesData(favourite);
-  // };
-
   return (
     <EventList
       // context={favouritesData ? favouritesData : null}
