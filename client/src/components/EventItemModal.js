@@ -9,9 +9,9 @@ const EventItemModal = ({
   toggleHidden,
   onClickOutsideCloseModal,
 }) => {
-  
+
   const formatDate = (start, end) => {
-    // separate event day from event time
+    // separate event day from event starting time
     let [day, startTime] = start.split(" ");
 
     // removes the seconds (from 20:00:00 to 20:00 by removing 3 last indexes which are ":00")

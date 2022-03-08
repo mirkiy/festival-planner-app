@@ -32,19 +32,13 @@ const SocialMediaContainer = () => {
   });
 
   return (
-    <Container
-      className="rounded"
+    <Container style={{flexShrink: "0"}}
       style={{
         backgroundColor: "grey",
-        width: "max-content",
+        width: "100%",
         height: "max-content",
-        padding: "6px 14px",
-        position: "fixed",
-        zIndex: "10000",
-        float: "5 right",
-        left: "50%",
-        bottom: "0",
-        transform: " translate(-50%, -20%)",
+        padding: "0",
+        margin: "0",
       }}
     >
       <Stack id="social-media-wrapper" direction="horizontal" gap={3}>
