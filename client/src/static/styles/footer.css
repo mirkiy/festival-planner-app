@@ -1,0 +1,21 @@
+#social-media-wrapper > div > a > i {
+  color: var(--icons-color);
+  font-size: 24px;
+  transition: ease-in-out 0.5s;
+}
+
+#social-media-wrapper > div > a > i:hover {
+  color: var(--dark-color);
+  font-size: 28px;
+  transition: ease-in-out 0.5s;
+}
+
+#social-media-wrapper > div > a {
+  transition: ease-in 0.5s;
+  border-radius: 7.5px;
+}
+
+#social-media-wrapper > div > a:hover {
+  background-color: var(--icons-color);
+  transition: ease-in 0.5s;
+}

@@ -1,8 +1,13 @@
 @import "./static/styles/modal.css";
 @import "./static/styles/search.css";
+@import "./static/styles/navbar.css";
+@import "./static/styles/footer.css";
 
 :root {
   --main-color: #b6cdbd;
+  --second-color: #89a492;
+  --dark-color: #667A6C;
+  --icons-color: snow;
 }
 
 body {
@@ -47,6 +52,12 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+
+.sidenav---navtext---1AE_f > a:hover {
+  color: snow !important;
 }
 
 .hover-heart > .fa.far.fa-heart {
@@ -66,9 +77,7 @@ a {
 }
 
 .rounded {
-  border-radius: 1.7rem !important;
+  border-radius: 0.75rem !important;
 }
 
-.sidenav---sidenav---_2tBP {
-  background: var(--main-color) !important;
-}
+

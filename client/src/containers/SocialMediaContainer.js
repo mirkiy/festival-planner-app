@@ -35,7 +35,6 @@ const SocialMediaContainer = () => {
     <Container
       style={{
         flexShrink: "0",
-        backgroundColor: "grey",
         minWidth: "100%",
         height: "max-content",
         padding: "2vh 0",

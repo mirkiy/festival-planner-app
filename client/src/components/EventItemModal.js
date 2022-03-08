@@ -9,7 +9,6 @@ const EventItemModal = ({
   toggleHidden,
   onClickOutsideCloseModal,
 }) => {
-
   const formatDate = (start, end) => {
     // separate event day from event starting time
     let [day, startTime] = start.split(" ");
@@ -57,7 +56,9 @@ const EventItemModal = ({
                 <p>
                   <b>{day}</b>
                 </p>
-                <p>From <b>{start}</b> till <b>{end}</b></p>
+                <p>
+                  From <b>{start}</b> till <b>{end}</b>
+                </p>
               </Col>
               <Col>
                 <p>£{currentEvent.performances[0].price}</p>
@@ -71,7 +72,11 @@ const EventItemModal = ({
         </Modal.Body>
 
         <Modal.Footer>
-          <a href={currentEvent.website}>
+          <a
+            href={currentEvent.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i>Go to official website.</i>
           </a>
         </Modal.Footer>
