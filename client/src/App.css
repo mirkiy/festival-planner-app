@@ -2,6 +2,7 @@
 @import "./static/styles/search.css";
 @import "./static/styles/navbar.css";
 @import "./static/styles/footer.css";
+@import "./static/styles/form.css";
 
 :root {
   --main-color: #b6cdbd;
@@ -16,7 +17,7 @@ body {
 .event-gallery {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 .event-wrapper {
   position: relative;
