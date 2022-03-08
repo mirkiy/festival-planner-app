@@ -6,22 +6,22 @@ import SocialMediaIcon from "../components/SocialMediaIcon";
 const SocialMediaContainer = () => {
   const icons = [
     {
-      icon: "devicon-facebook-plain colored",
+      icon: "fa fa-brands fa-facebook-f",
       href: "https://facebook.com",
       alt: "facebook icon",
     },
     {
-      icon: "devicon-twitter-original colored",
+      icon: "fa fa-brands fa-twitter",
       href: "https://twitter.com",
       alt: "twitter icon",
     },
     {
-      icon: "devicon-github-original colored",
+      icon: "fa fa-brands fa-pinterest",
       href: "https://github.com",
       alt: "github icon",
     },
     {
-      icon: "devicon-twitter-original colored",
+      icon: "fa fa-brands fa-instagram",
       href: "https://twitter.com",
       alt: "twitter icon",
     },
@@ -32,17 +32,27 @@ const SocialMediaContainer = () => {
   });
 
   return (
-    <Container style={{flexShrink: "0"}}
+    <Container
       style={{
+        flexShrink: "0",
         backgroundColor: "grey",
-        width: "100%",
+        minWidth: "100%",
         height: "max-content",
-        padding: "0",
-        margin: "0",
+        padding: "2vh 0",
       }}
     >
-      <Stack id="social-media-wrapper" direction="horizontal" gap={3}>
-        {iconNodes}
+      <Stack>
+        <Stack
+          id="social-media-wrapper"
+          style={{ justifyContent: "center" }}
+          direction="horizontal"
+          gap={3}
+        >
+          {iconNodes}
+        </Stack>
+        <i style={{ margin:"auto", color: "white" }}>Follow us on social media</i>
+        <hr/>
+        <p style={{ margin:"auto", color: "white" }}>2022 &copy; Overconfident Rats </p>
       </Stack>
     </Container>
   );
