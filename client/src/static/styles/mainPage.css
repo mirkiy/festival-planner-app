@@ -1,0 +1,11 @@
+.main-page-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: blue;
+}
+.event-wrapper {
+  position: relative;
+  margin: 0.5rem;
+  cursor: pointer;
+}

@@ -2,11 +2,12 @@
 @import "./static/styles/search.css";
 @import "./static/styles/navbar.css";
 @import "./static/styles/footer.css";
+@import "./static/styles/mainPage.css";
 
 :root {
   --main-color: #b6cdbd;
   --second-color: #89a492;
-  --dark-color: #667A6C;
+  --dark-color: #667a6c;
   --icons-color: snow;
 }
 
@@ -48,7 +49,7 @@ body {
   width: 300px;
   margin: 0 auto;
   overflow: hidden;
-  font-family: 'Bungee Shade';
+  font-family: "Bungee Shade";
   letter-spacing: 2px;
   font-size: larger;
   /* font-style: italic; */
@@ -60,7 +61,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
 
 .sidenav---navtext---1AE_f > a:hover {
   color: snow !important;
@@ -85,5 +85,3 @@ a {
 .rounded {
   border-radius: 0.75rem !important;
 }
-
-
