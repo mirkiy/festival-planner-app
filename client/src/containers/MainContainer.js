@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <div>
+    <div style={{ display: "flex", minHeight: "100vh", flexDirection: "column" }}>
       <BrowserRouter>
         <NavBarContainer />
         <RouterContainer />
