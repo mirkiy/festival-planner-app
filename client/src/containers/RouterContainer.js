@@ -13,6 +13,23 @@ const RouterContainer = () => {
   const [festivalData, setFestivalData] = useState([]);
   const [favouritesData, setFavouritesData] = useState([]);
 
+  const getEventsFromLocalStorage = () => {
+    const favourite = [];
+    const keys = Object.keys(localStorage);
+
+    keys.forEach((key) => {
+      favourite.push(localStorage.getItem(key));
+    });
+
+    return favourite;
+  };
+
+  useEffect(() => {
+    setFavouritesData(
+      getEventsFromLocalStorage.length > 0 ? getEventsFromLocalStorage : []
+    );
+  }, []);
+
   const onEventClick = (newFavourite) => {
     const favouritesDataCodes = favouritesData.map(
       (favourite) => favourite.code
@@ -20,7 +37,9 @@ const RouterContainer = () => {
 
     if (favouritesDataCodes.includes(newFavourite.code)) {
       setFavouritesData((favouritesData) =>
-        favouritesData.filter((favourite) => favourite.code !== newFavourite.code)
+        favouritesData.filter(
+          (favourite) => favourite.code !== newFavourite.code
+        )
       );
     } else {
       setFavouritesData((favouritesData) => [...favouritesData, newFavourite]);
