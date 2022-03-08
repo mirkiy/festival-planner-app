@@ -37,7 +37,7 @@ const SocialMediaContainer = () => {
         flexShrink: "0",
         minWidth: "100%",
         height: "max-content",
-        padding: "2vh 0 2vh 8vw",
+        padding: "2vh 0",
       }}
     >
       <Stack>
