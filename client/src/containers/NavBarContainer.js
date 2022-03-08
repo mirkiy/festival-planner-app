@@ -8,6 +8,7 @@ const NavBarContainer = () => {
 
   return (
     <SideNav
+      className=""
       style={{ position: "fixed" }}
       onSelect={(selected) => {
         // Add your code here
@@ -17,22 +18,22 @@ const NavBarContainer = () => {
       <SideNav.Nav defaultSelected={currentPath}>
         <NavItem eventKey="/">
           <NavIcon>
-            <Link to="/">
-              <i className="fa fa-fw fa-home" style={{ fontSize: "1.75em" }} />
+            <Link className="nav-text" to="/">
+              <i className="fa fa-fw fa-home nav-icon" style={{ fontSize: "1.75em" }} />
             </Link>
           </NavIcon>
           <NavText>
-            <Link to="/">Home</Link>
+            <Link className="nav-text" to="/">Home</Link>
           </NavText>
         </NavItem>
         <NavItem eventKey="/festivals">
           <NavIcon>
             <i
-              className="fa fal fa-theater-masks"
+              className="fa fal fa-theater-masks nav-icon"
               style={{ fontSize: "1.75em" }}
             />
           </NavIcon>
-          <NavText>Festivals</NavText>
+          <NavText className="nav-text">Festivals</NavText>
 
           <NavItem eventKey="/festivals/jazz">
             <NavText>
@@ -75,7 +76,7 @@ const NavBarContainer = () => {
         <NavItem eventKey="/favourites">
           <NavIcon>
             <Link to="/favourites">
-              <i className="fa far fa-heart" style={{ fontSize: "1.75em" }} />
+              <i className="fa far fa-heart nav-icon" style={{ fontSize: "1.75em" }} />
             </Link>
           </NavIcon>
           <NavText>
@@ -86,7 +87,7 @@ const NavBarContainer = () => {
           <NavIcon>
             <Link to="/calendar">
               <i
-                className="fa fal fa-calendar-alt"
+                className="fa fal fa-calendar-alt nav-icon"
                 style={{ fontSize: "1.75em" }}
               />
             </Link>
@@ -98,7 +99,7 @@ const NavBarContainer = () => {
         <NavItem eventKey="form">
           <NavIcon>
             <Link to="/form">
-              <i className="fa far fa-sign-in" style={{ fontSize: "1.75em" }} />
+              <i className="fa far fa-sign-in nav-icon" style={{ fontSize: "1.75em" }} />
             </Link>
           </NavIcon>
           <NavText>
@@ -108,7 +109,7 @@ const NavBarContainer = () => {
         <NavItem eventKey="about">
           <NavIcon>
             <Link to="/about">
-              <i className="fa fal fa-smile" style={{ fontSize: "1.75em" }} />
+              <i className="fa fal fa-smile nav-icon" style={{ fontSize: "1.75em" }} />
             </Link>
           </NavIcon>
           <NavText>

@@ -26,10 +26,6 @@ const SocialMediaIcon = ({ icon }) => {
         <i
           className={icon.icon}
           alt={icon.alt}
-          style={{
-            fontSize: "24px",
-            color: "white"
-          }}
         />
       </a>
     </div>
