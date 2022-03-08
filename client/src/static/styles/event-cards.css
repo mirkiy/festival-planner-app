@@ -1,8 +1,0 @@
-.event-wrapper-title {
-  height: calc(var(--bs-body-font-size) * 4);
-  align-items: center;
-}
-
-.hover-heart > .fa.far.fa-heart {
-  cursor: pointer;
-}
