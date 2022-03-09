@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EventList from "../components/EventList";
@@ -7,7 +6,6 @@ import FavouritesDataContext from "../context/FavouritesDataContext";
 import FilteredEvents from "../components/FilteredEvents";
 
 const FestivalPage = ({ onEventClick }) => {
-
   const { festivalData, setFestivalData } = useContext(FestivalDataContext);
   const { favouritesData, setFavouritesData } = useContext(
     FavouritesDataContext
@@ -20,7 +18,7 @@ const FestivalPage = ({ onEventClick }) => {
   const { festival } = useParams(); // gets 'festival' parameter from '/festival/:festival' route
 
   const [search, setSearch] = useState("");
-  
+
   const fetchData = () => {
     fetch(`http://localhost:8080/festivals?id=${festival}`)
       .then((response) => response.json())
