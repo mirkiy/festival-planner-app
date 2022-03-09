@@ -2,9 +2,7 @@
 @import "./static/styles/search.css";
 @import "./static/styles/navbar.css";
 @import "./static/styles/footer.css";
-
 @import "./static/styles/homepage.css";
-
 @import "./static/styles/form.css";
 
 
@@ -18,15 +16,6 @@
 
 body {
   background-color: var(--main-color);
-}
-
-main {
-  padding-bottom: 8vh;
-  padding-left: 8vw;
-  flex-grow: 1;
-  min-height: 100%;
-  margin: auto;
-  max-width: 90%;
 }
 
 .event-gallery {
@@ -56,8 +45,7 @@ main {
   background-color: snow;
   padding: 0.5vh 1.2vh;
   font-weight: bolder;
-  /* height: 66px; */
-  height: 35px;
+  height: 66px;
   width: 300px;
   margin: 0 auto;
   font-family: "Bungee Shade";

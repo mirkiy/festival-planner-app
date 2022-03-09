@@ -1,10 +1,19 @@
-h1 {
+h1, h2 {
   font-family: "Bungee Shade";
   font-weight: 900;
   color: var(--main-font-color);
   text-align: center;
+}
+
+h1 {
   margin: 8.5vh 1.2vw;
 }
+
+h2 {
+  margin: 6vh 1.2vw 3vh
+}
+
+
 
 .home-page-container {
   /* margin-top: 50px; */
