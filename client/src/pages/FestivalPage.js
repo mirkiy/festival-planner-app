@@ -57,6 +57,7 @@ const FestivalPage = ({ onEventClick }) => {
 
   return (
     <>
+      <h2>{festival[0].toUpperCase() + festival.substring(1)} festival</h2>
       <FilteredEvents setSearch={setSearch} />
       <EventList
         context={

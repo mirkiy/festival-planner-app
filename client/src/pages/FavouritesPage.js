@@ -15,11 +15,14 @@ const FavouritesPage = ({ onEventClick }) => {
   }
 
   return (
-    <EventList
-      // context={favouritesData ? favouritesData : null}
-      context={favouritesData ? favouritesData : null}
-      onEventClick={onEventClick}
-    />
+    <>
+      <h2>Your favourite festivals</h2>
+      <EventList
+        // context={favouritesData ? favouritesData : null}
+        context={favouritesData ? favouritesData : null}
+        onEventClick={onEventClick}
+      />
+    </>
   );
 };
 
