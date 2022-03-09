@@ -49,12 +49,17 @@ const SocialMediaContainer = () => {
         >
           {iconNodes}
         </Stack>
-        <i style={{ margin: "auto", color: "white" }}>
-          Follow us on social media
-        </i>
+        <i className="footer-text">Follow us on social media</i>
         <hr />
-        <p style={{ margin: "auto", color: "white" }}>
+        <p className="footer-text">
           2022 &copy; Overconfident Rats{" "}
+          <a
+            href="https://www.pret.co.uk/en-GB/pretcoffeesub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ☕️
+          </a>
         </p>
       </Stack>
     </Container>

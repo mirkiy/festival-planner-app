@@ -37,12 +37,12 @@
 
 .btn-custom {
   color: var(--icons-color) !important;
-  background-color: var(--dark-color) !important;
+  background-color: var(--second-color) !important;
   max-width: fit-content;
 }
 
 .btn-custom:hover {
-  background-color: var(--second-color) !important;
+  background-color: var(--hover-color) !important;
 }
 
 .forgot-password,
