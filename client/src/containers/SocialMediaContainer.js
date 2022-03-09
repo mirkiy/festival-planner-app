@@ -22,8 +22,8 @@ const SocialMediaContainer = () => {
     },
     {
       icon: "fa fa-brands fa-instagram",
-      href: "https://twitter.com",
-      alt: "twitter icon",
+      href: "https://www.instagram.com/",
+      alt: "instagram icon",
     },
   ];
 
@@ -49,9 +49,13 @@ const SocialMediaContainer = () => {
         >
           {iconNodes}
         </Stack>
-        <i style={{ margin:"auto", color: "white" }}>Follow us on social media</i>
-        <hr/>
-        <p style={{ margin:"auto", color: "white" }}>2022 &copy; Overconfident Rats </p>
+        <i style={{ margin: "auto", color: "white" }}>
+          Follow us on social media
+        </i>
+        <hr />
+        <p style={{ margin: "auto", color: "white" }}>
+          2022 &copy; Overconfident Rats{" "}
+        </p>
       </Stack>
     </Container>
   );

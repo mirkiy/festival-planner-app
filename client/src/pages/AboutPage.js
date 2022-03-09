@@ -1,7 +1,15 @@
 import React from "react";
 
 const AboutPage = () => {
-    return <h1>AAAAAAAAAADASHDJASLDASDASDASDASDASDASDASDASDASDASDASD</h1>;
+  return (
+    <a
+      href="https://www.pret.co.uk/en-GB/pretcoffeesub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <h1>☕️ ☕️ ☕️</h1>
+    </a>
+  );
 };
 
 export default AboutPage;

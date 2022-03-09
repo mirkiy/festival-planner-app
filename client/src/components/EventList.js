@@ -29,8 +29,7 @@ const EventList = ({ context, onEventClick, search = null }) => {
         );
     });
   }
-  
-  
+
   useEffect(() => {
     // BUG: removing last element from favourite events
     // caused the element to dismount before running allowScroll
