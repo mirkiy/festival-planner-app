@@ -9,6 +9,7 @@ import InternationalImage from "../static/images/international.jpg";
 const HomePage = () => {
   return (
     <main className="home-page-container">
+      <h1>Edinfest planner</h1>
       <section className="home-page-gallery">
         <div className="home-event-wrapper">
           <a href="/festivals/art">
@@ -44,7 +45,6 @@ const HomePage = () => {
           </a>
         </div>
       </section>
-      <h1>Edinfest planner</h1>
       <section className="home-page-gallery">
         <div className="home-event-wrapper">
           <a href="/festivals/jazz">
