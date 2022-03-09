@@ -20,15 +20,6 @@ body {
   background-color: var(--main-color);
 }
 
-main {
-  padding-bottom: 8vh;
-  padding-left: 8vw;
-  flex-grow: 1;
-  min-height: 100%;
-  margin: auto;
-  max-width: 90%;
-}
-
 .event-gallery {
   display: flex;
   flex-flow: row wrap;
@@ -64,11 +55,8 @@ main {
   font-family: "Bungee Shade";
   letter-spacing: 2px;
   font-size: larger;
-
   color: var(--main-font-color);
-
   opacity: 0.8;
-
 }
 
 a {
