@@ -1,11 +1,11 @@
 #social-media-wrapper > div > a > i {
-  color: var(--icons-color);
+  color: var(--second-color);
   font-size: 24px;
   transition: ease-in-out 0.5s;
 }
 
 #social-media-wrapper > div > a > i:hover {
-  color: var(--dark-color);
+  color: var(--icons-color);
   font-size: 28px;
   transition: ease-in-out 0.5s;
 }
@@ -16,6 +16,11 @@
 }
 
 #social-media-wrapper > div > a:hover {
-  background-color: var(--icons-color);
+  background-color: var(--second-color);
   transition: ease-in 0.5s;
+}
+
+.footer-text {
+  margin: auto;
+  color: var(--second-color);
 }

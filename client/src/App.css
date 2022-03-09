@@ -5,23 +5,23 @@
 @import "./static/styles/homepage.css";
 @import "./static/styles/form.css";
 
-
 :root {
   --main-color: #b6cdbd;
-  --second-color: #89a492;
-  --dark-color: #667a6c;
+  --second-color: rgb(98 34 93);
+  --hover-color: rgb(172, 125, 168);
   --icons-color: snow;
   --main-font-color: rgb(192, 24, 178);
 }
 
 body {
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 
 .event-gallery {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .event-wrapper {
   position: relative;
@@ -54,7 +54,6 @@ body {
   color: var(--main-font-color);
   opacity: 0.8;
   align-items: center;
-
 }
 
 a {

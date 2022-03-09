@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   /* background-color: #b6cdbd; */
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
   height: 7vh;
   display: flex;
   justify-content: center;
@@ -44,11 +44,9 @@
   width: 280px;
 }
 
-
-
 .search-container .search-btn .fas {
   /* color: #5cbdbb; */
-  color: #b6cdbd;
+  color: var(--main-font-color);
 }
 
 @keyframes hoverShake {
@@ -71,7 +69,6 @@
   animation: hoverShake 0.5s linear 1;
 }
 
-.search-container > input:focus{
-  width:280px;
+.search-container > input:focus {
+  width: 280px;
 }
-
