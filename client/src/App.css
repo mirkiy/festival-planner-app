@@ -4,6 +4,7 @@
 @import "./static/styles/footer.css";
 @import "./static/styles/homepage.css";
 @import "./static/styles/form.css";
+@import "./static/styles/about.css";
 
 :root {
   --main-color: #b6cdbd;

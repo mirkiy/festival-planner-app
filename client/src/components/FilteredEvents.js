@@ -6,6 +6,7 @@ const FilteredEvents = ({ setSearch }) => {
   };
   return (
     <div className="search-body">
+      {/* Source: https://freefrontend.com/css-search-boxes/ */}
       <div className="search-container">
         <input
           className="search-input"
