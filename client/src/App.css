@@ -66,6 +66,7 @@ main {
   color: rgb(192, 24, 178);
   /* color: rgb(226, 13, 155); */
   opacity: 0.8;
+  align-items: center;
 }
 
 a {

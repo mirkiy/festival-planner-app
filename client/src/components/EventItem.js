@@ -38,6 +38,14 @@ const EventItem = ({ event, onEventClick }) => {
     }
   };
 
+  const shortenTitle = (string, maxLength) => {
+    if (string.length < maxLength) return string;
+
+    let arrayOfWords = string.slice(0, maxLength).trim();
+
+    return arrayOfWords + "...";
+  }
+
   return (
     <>
       <div className="event-wrapper">
@@ -60,7 +68,7 @@ const EventItem = ({ event, onEventClick }) => {
             />
           </div>
           <span className="event-wrapper-title" onClick={() => toggleHidden()}>
-            {event.title}
+            {shortenTitle(event.title, 18)}
           </span>
           {/* <h2>{event.year}</h2> */}
         </div>
