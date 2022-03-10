@@ -16,7 +16,8 @@
   font-size: 20px;
 }
 
-.social-link:hover, .social-link:focus {
+.social-link:hover,
+.social-link:focus {
   background: #ddd;
   text-decoration: none;
   color: #555;
@@ -33,4 +34,33 @@
   width: 15vw !important;
   height: 15vw !important;
   object-fit: cover;
+}
+
+.about-icons {
+  justify-content: space-evenly;
+  width: 70%;
+  margin: auto;
+}
+
+.about-icons > .stack-icon {
+  /* width: 12vw !important; */
+  height: 12vh;
+  max-height: 12vh !important;
+}
+
+.about-text {
+  width: 80% ;
+  margin: auto;
+}
+
+.about-text p {
+  font-size: larger;
+}
+
+.about-text a {
+  color: var(--second-color);
+}
+
+.about-text a:hover {
+  color: var(--hover-color);
 }

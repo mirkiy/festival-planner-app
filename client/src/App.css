@@ -7,7 +7,7 @@
 @import "./static/styles/about.css";
 
 :root {
-  --main-color: #b6cdbd;
+  --main-color: rgb(98 34 93);
   --second-color: rgb(98 34 93);
   --hover-color: rgb(172, 125, 168);
   --icons-color: snow;
