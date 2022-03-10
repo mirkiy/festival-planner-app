@@ -1,0 +1,66 @@
+/* CSS source: https://bootstrapious.com/p/team-page */
+.social-link {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link > i {
+  font-size: 20px;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+/* Custom code */
+.about-container {
+  width: 80% !important;
+  padding-top: 8vh;
+}
+
+.img-thumbnail {
+  padding: 0 !important;
+  width: 15vw !important;
+  height: 15vw !important;
+  object-fit: cover;
+}
+
+.about-icons {
+  justify-content: space-evenly;
+  width: 100%;
+  margin: auto;
+}
+
+.about-icons > .stack-icon {
+  /* width: 12vw !important; */
+  height: 15vh;
+  max-height: 15vh !important;
+}
+
+.about-text {
+  width: 50% ;
+  margin: auto;
+}
+
+.about-text p {
+  font-size: larger;
+}
+
+.about-text a {
+  color: var(--second-color);
+}
+
+.about-text a:hover {
+  color: var(--hover-color);
+}

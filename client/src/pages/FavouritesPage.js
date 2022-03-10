@@ -16,7 +16,7 @@ const FavouritesPage = ({ onEventClick }) => {
 
   return (
     <>
-      <h2>Your favourite festivals</h2>
+      <h2>Your favourite events</h2>
       <EventList
         // context={favouritesData ? favouritesData : null}
         context={favouritesData ? favouritesData : null}

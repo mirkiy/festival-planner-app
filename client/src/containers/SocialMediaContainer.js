@@ -17,7 +17,7 @@ const SocialMediaContainer = () => {
     },
     {
       icon: "fa fa-brands fa-pinterest",
-      href: "https://github.com",
+      href: "https://pinterest.com",
       alt: "github icon",
     },
     {
