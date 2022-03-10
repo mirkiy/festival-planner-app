@@ -2,7 +2,7 @@ import React from "react";
 import Stack from "react-bootstrap/Stack";
 import clauChihuahua from "../static/images/clauChihuahua.jpg";
 import mirkaChihuahua from "../static/images/mirkaChihuahua.jpg";
-import JessieJess from "../static/images/jessiEjess.png";
+import jessieChihuahua from "../static/images/jessieChihuahua.jpg"
 
 const AboutPage = () => {
   return (
@@ -141,12 +141,12 @@ const AboutPage = () => {
           <div class="col-xl-4 col-sm-4 mb-5">
             <div class="bg-white rounded shadow py-5 px-4">
               <img
-                src={JessieJess}
+                src={jessieChihuahua}
                 alt=""
                 width="100"
                 class="img-fluid rounded-circle mb-3 img-thumbnail shadow"
               />
-              <h5 class="mb-0">Jessie Jess Dodge Dodge</h5>
+              <h5 class="mb-0">Jessie Dodge</h5>
               <span class="small text-uppercase text-muted">
                 Software Developer
               </span>
