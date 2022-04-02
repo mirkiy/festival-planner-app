@@ -7,7 +7,7 @@ const SocialMediaIcon = ({ icon }) => {
       style={{
         width: "36px",
         height: "36px",
-        backgroundColor: "white",
+        backgroundColor: "transparent",
       }}
     >
       <a
@@ -26,9 +26,6 @@ const SocialMediaIcon = ({ icon }) => {
         <i
           className={icon.icon}
           alt={icon.alt}
-          style={{
-            fontSize: "24px",
-          }}
         />
       </a>
     </div>

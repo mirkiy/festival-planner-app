@@ -1,0 +1,42 @@
+.sidenav---sidenav---_2tBP {
+  background: var(--second-color) !important;
+}
+
+.nav-icon {
+  color: var(--icons-color) !important;
+}
+
+.sidenav---navtext---1AE_f,
+.sidenav---navtext---1AE_f > a {
+  color: var(--icons-color) !important;
+}
+
+.sidenav---sidenav-subnavitem---1cD47 {
+  color: var(--icons-color) !important;
+}
+
+.sidenav---sidenav-subnav---1EN61 {
+  color: var(--second-color) !important;
+}
+
+.sidenav---expanded---1KdUL {
+  color: var(--icons-color) !important;
+}
+
+.sidenav---sidenav-navitem---uwIJ-.sidenav---expanded---1KdUL
+  > .sidenav---sidenav-subnav---1EN61
+  > .sidenav---sidenav-subnavitem---1cD47
+  > .sidenav---navitem---9uL5T
+  > .sidenav---navtext---1AE_f
+  > a {
+  color: var(--icons-color) !important;
+}
+
+.sidenav---sidenav-subnav---1EN61 {
+  background-color: var(--second-color) !important;
+  border: solid 1px var(--second-color) !important;
+}
+
+.sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T:hover {
+  background-color: rgb(172, 125, 168) !important;
+}

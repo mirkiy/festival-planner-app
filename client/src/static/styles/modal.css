@@ -1,16 +1,25 @@
 .modal-container {
-    z-index: 10000;
-    /* width: 100vw; */
-    /* height: 100vh; */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    background-color: rgba(22,22,22,0.5); /* complimenting your modal colors */
+  overflow: scroll;
+  z-index: 10000;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(22, 22, 22, 0.5); /* complimenting your modal colors */
 }
 
 .modal-wrapper {
-    margin: 0 auto;
-    top: 25%;
+  margin: 0 auto;
+  top: 15%;
+}
+
+.modal-footer > a:hover {
+  color: var(--main-color);
+}
+
+.modal-footer > a {
+  color: var(--hover-color);
 }

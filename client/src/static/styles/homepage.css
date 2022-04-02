@@ -1,0 +1,46 @@
+h1, h2 {
+  font-family: "Bungee Shade";
+  font-weight: 900;
+  color: var(--main-font-color);
+  text-align: center;
+}
+
+h1 {
+  margin: 8.5vh 1.2vw;
+}
+
+h2 {
+  margin: 6vh 1.2vw 3vh
+}
+
+
+
+.home-page-container {
+  /* margin-top: 50px; */
+}
+.home-page-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.home-event-wrapper {
+  position: relative;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.home-event-wrapper img {
+  transition: transform 0.5s;
+  box-shadow: 2px 2px 10px #304135 !important;
+}
+.home-event-wrapper img:hover {
+  transform: scale(1.1);
+}
+.home-event-wrapper a span {
+  position: absolute;
+  top: 2rem;
+  left: 0.3rem;
+  text-align: center;
+  transform: rotate(-35deg);
+  color: white;
+  text-shadow: 2px 2px 4px #d835f6f0;
+}

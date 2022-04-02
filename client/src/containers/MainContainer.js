@@ -6,11 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div style={{ display: "flex", minHeight: "100vh", flexDirection: "column" }}>
       <BrowserRouter>
         <NavBarContainer />
         <RouterContainer />
-        <SocialMediaContainer />
+        <SocialMediaContainer  />
       </BrowserRouter>
     </div>
   );

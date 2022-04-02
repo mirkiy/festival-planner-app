@@ -1,39 +1,86 @@
-@import './static/styles/modal.css';
+@import "./static/styles/modal.css";
+@import "./static/styles/search.css";
+@import "./static/styles/navbar.css";
+@import "./static/styles/footer.css";
+@import "./static/styles/homepage.css";
+@import "./static/styles/form.css";
+@import "./static/styles/about.css";
+
+:root {
+  --main-color: rgb(98 34 93);
+  --second-color: rgb(98 34 93);
+  --hover-color: rgb(172, 125, 168);
+  --icons-color: snow;
+  --main-font-color: rgb(192, 24, 178);
+}
 
 body {
-  background-color: grey;
+  background-color: snow;
 }
+
 .event-gallery {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .event-wrapper {
   position: relative;
   margin: 0.5rem;
+  cursor: pointer;
+}
+.event-wrapper:hover {
+  opacity: 0.8;
 }
 .event-wrapper-title-container {
-  /* background-color: antiquewhite; */
   position: absolute;
   width: 100%;
-  /* max-width: 80%; */
-  top: 50%;
-  left: 0;
+  top: 54%;
   text-align: center;
-  /* margin-top: -25px; */
+  /* opacity: 0.8; */
 }
 .event-wrapper-title {
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
-  background-color: yellowgreen;
+  background-color: snow;
   padding: 0.5vh 1.2vh;
+  font-weight: bolder;
+  height: 66px;
+  width: 300px;
+  margin: 0 auto;
+  font-family: "Bungee Shade";
+  letter-spacing: 2px;
+  font-size: larger;
+  color: var(--main-font-color);
+  opacity: 0.8;
+  align-items: center;
 }
 
 a {
   text-decoration: none;
-
+  color: inherit;
 }
 
+.sidenav---navtext---1AE_f > a:hover {
+  color: snow !important;
+}
 
-.hover-heart.fa.far.fa-heart::after{
-  color: red;
+.hover-heart > .fa.far.fa-heart {
+  text-shadow: 2px 3px 13px rgb(134 94 101);
+}
+
+.hover-heart.fa.far.fa-heart::after {
+  color: rgb(192, 24, 178);
+}
+
+.hover-heart {
+  height: 2px;
+  width: 2px;
+  position: relative;
+  top: -85px;
+  left: 270px;
+}
+
+.rounded {
+  border-radius: 0.75rem !important;
 }
